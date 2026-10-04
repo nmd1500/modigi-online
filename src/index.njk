@@ -1,0 +1,171 @@
+---
+layout: layouts/base.njk
+preloadHero: hero-wrist
+---
+{%- set featured = lines %}
+<section class="hero">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow hero__fade">Handcrafted in Vietnam, since {{ site.founded }}</p>
+      <h1 class="display hero__title">
+        <span class="line"><span>あなたの</span></span>
+        <span class="line"><span><span class="nw">Apple Watch</span>に、</span></span>
+        <span class="line"><span>上質な一本を。</span></span>
+      </h1>
+      <p class="hero__sub hero__fade">Leather bands, stitched by hand — one at a time.</p>
+      <p class="lead hero__fade">ベトナムの職人が、選び抜いた本革を一針ずつ手縫いで仕立てる。<br class="pc">MODIGIは、手首にいちばん近い場所に、確かな手仕事を届けます。</p>
+      <div class="btn-row hero__fade">
+        <a class="btn" href="/collection/">コレクションを見る</a>
+        <a class="btn btn--ghost" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="hero">Amazon公式ストア</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      {% img "hero-wrist", "木のテーブルの上、MODIGIの黒い本革バンドを着けたApple Watchとコーヒー", "(min-width: 960px) 46vw, 100vw", "eager" %}
+      <p class="hero__badge"><strong>{{ site.founded }}</strong>ESTABLISHED</p>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    {%- for n in [1, 2] %}
+    <span>Veau Swift</span><span>Veau Epsom</span><span>Crocodile</span><span>Barenia</span><span>Hand-stitched</span><span>Zermatt Lining</span><span>38 — 49 mm</span>
+    {%- endfor %}
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <p class="eyebrow">The MODIGI Way</p>
+        <h2 class="h2">見えない部分にこそ、<br>手間を惜しまない。</h2>
+      </div>
+      <p class="lead reveal" style="--d:.1s">表革の選定から、裁断、手縫い、コバ磨きまで。工業製品では省かれてしまう工程を、ひとつずつ人の手で。だからこそ、毎日着けるほどに違いがわかります。</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar__num">I — Hand-stitched</span>
+        <h3 class="h3">職人による手縫い</h3>
+        <p>強度の高いワックス糸を使い、一針ずつ手作業で縫い上げます。機械縫いに比べてほつれにくく、ステッチそのものが美しい表情になります。</p>
+      </div>
+      <div class="pillar reveal" style="--d:.1s">
+        <span class="pillar__num">II — Fine Leather</span>
+        <h3 class="h3">選び抜いた本革</h3>
+        <p>フランス産カーフやクロコダイルなど、最高級のレザーを厳選。裏地には防水加工のツェルマット・カーフを合わせ、汗ばむ季節も快適です。</p>
+      </div>
+      <div class="pillar reveal" style="--d:.2s">
+        <span class="pillar__num">III — Every Size</span>
+        <h3 class="h3">全モデル・全サイズ対応</h3>
+        <p>Series 4〜11、SE、Ultraまで。38mmから49mmまでのすべてのApple Watchにフィット。工具不要のワンタッチで付け替えられます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal">
+        <p class="eyebrow">Collection</p>
+        <h2 class="h2">素材から選ぶ、<br>あなたの一本。</h2>
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <p class="lead">素材ごとに異なる表情、手ざわり、経年変化。四つのラインから、装いと気分に合う一本をお選びください。</p>
+        <a class="link-arrow" href="/collection/" style="margin-top:24px">すべてのコレクション</a>
+      </div>
+    </div>
+    <div class="lines">
+      {%- for l in featured %}
+      <a class="line-card" href="/collection/{{ l.slug }}/">
+        <div class="line-card__media reveal-img">{% img l.hero, l.ja + "のApple Watchレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
+        <div class="line-card__meta reveal">
+          <div><h3 class="line-card__en">{{ l.en }}</h3><span class="line-card__ja">{{ l.ja }} ／ {{ l.kana }}</span></div>
+          {% if l.minPrice %}<span class="line-card__price">{{ l.minPrice | yen }}〜</span>{% endif %}
+        </div>
+        <p class="line-card__lead reveal">{{ l.lead }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--night">
+  <div class="container split">
+    <div class="split__media split__media--tall reveal-img">{% img "craft-stitch", "職人が革を手縫いし、コバを仕上げる工程", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div>
+      <p class="eyebrow reveal">Our Story</p>
+      <h2 class="h2 reveal">{{ site.founded }}年、<br>ベトナムの工房から。</h2>
+      <p class="lead reveal" style="margin-top:28px">MODIGIは、ベトナムに受け継がれてきた革の手仕事に魅せられ、2015年に生まれました。大量生産では決して生まれない、ひとつひとつ表情の異なる一本を。職人の技と誇りを、あなたの日常へ。</p>
+      <div class="stats reveal">
+        <div><div class="stat__num">{{ site.founded }}</div><div class="stat__label">創業</div></div>
+        <div><div class="stat__num">100<span style="font-size:.5em">%</span></div><div class="stat__label">手縫い仕上げ</div></div>
+        <div><div class="stat__num">38–49</div><div class="stat__label">mm 全サイズ対応</div></div>
+      </div>
+      <div class="btn-row reveal"><a class="btn btn--ghost" href="/story/">ブランドストーリーを読む</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow">Materials</p>
+      <h2 class="h2">革を知ると、選ぶ時間が楽しくなる。</h2>
+    </div>
+    <div class="materials">
+      <a class="material reveal" href="/collection/swift/">
+        <span class="material__swatch" style="background:#e07134"></span>
+        <p>きめ細かくマット。吸い付くようにしなやかなフランス産カーフ。</p>
+        <span class="material__en">Veau Swift</span><span class="material__ja">ヴォー・スイフト</span>
+      </a>
+      <a class="material reveal" style="--d:.08s" href="/collection/epsom/">
+        <span class="material__swatch" style="background:#8c8172"></span>
+        <p>細かな型押しで軽く、傷や水に強い。端正なシルエットを保つ。</p>
+        <span class="material__en">Veau Epsom</span><span class="material__ja">ヴォー・エプソン</span>
+      </a>
+      <a class="material reveal" style="--d:.16s" href="/collection/crocodile/">
+        <span class="material__swatch" style="background:#1d1b1a"></span>
+        <p>腹部の均整なスクエアグレイン。静かな艶をまとう最上位素材。</p>
+        <span class="material__en">Crocodile</span><span class="material__ja">クロコダイル</span>
+      </a>
+      <a class="material reveal" style="--d:.24s" href="/materials/#barenia">
+        <span class="material__swatch" style="background:#a9733f"></span>
+        <p>使うほどに深い飴色へ。経年変化を最も楽しめる、育てる革。</p>
+        <span class="material__en">Barenia</span><span class="material__ja">バレニア</span>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:48px"><a class="link-arrow" href="/materials/">素材とお手入れについて</a></p>
+  </div>
+</section>
+
+<section class="section section--sand">
+  <div class="container split split--reverse">
+    <div class="split__media split__media--square reveal-img">{% img "gift-box", "MODIGIオレンジのギフトボックスとリボン", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div>
+      <p class="eyebrow reveal">The Gift</p>
+      <h2 class="h2 reveal">大切な人へ、<br>贈る理由のある一本を。</h2>
+      <p class="lead reveal" style="margin-top:28px">すべてのバンドは、MODIGIオリジナルのギフトボックスに収めてお届けします。誕生日、記念日、昇進のお祝いに。開けた瞬間から、特別な時間がはじまります。</p>
+      <div class="btn-row reveal"><a class="btn" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="gift">ギフトを選ぶ（Amazon）</a></div>
+    </div>
+  </div>
+</section>
+
+
+{% if collections.journal.length %}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="reveal"><p class="eyebrow">Journal</p><h2 class="h2">革と暮らす、<br>ちいさな読みもの。</h2></div>
+      <div class="reveal" style="--d:.1s"><a class="link-arrow" href="/journal/">すべての記事</a></div>
+    </div>
+    <div class="posts">
+      {%- for post in collections.journal | head(3) %}
+      {% include "partials/post-card.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta.njk" %}

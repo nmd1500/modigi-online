@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+title: コレクション — Apple Watch 本革バンド
+description: MODIGIのApple Watch用本革バンド全コレクション。クロコダイル、ヴォー・スイフト、ヴォー・エプソン、エッセンシャル。38〜49mmの全サイズに対応した職人の手縫いレザーバンド。
+---
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>コレクション</li></ol>
+    <p class="eyebrow">Collection</p>
+    <h1 class="display">Apple Watch<br>本革バンド コレクション</h1>
+    <p class="lead">素材の個性を生かし、職人が一本ずつ仕立てる四つのライン。すべてのモデルが38〜49mmのApple Watchに対応しています。</p>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="lines">
+      {%- for l in lines %}
+      <a class="line-card" href="/collection/{{ l.slug }}/">
+        <div class="line-card__media reveal-img">{% img l.hero, l.ja + "のApple Watchレザーバンド", "(min-width: 960px) 50vw, 100vw", ("eager" if loop.first else "lazy") %}</div>
+        <div class="line-card__meta reveal">
+          <div><h2 class="line-card__en">{{ l.en }}</h2><span class="line-card__ja">{{ l.ja }} ／ {{ l.kana }}</span></div>
+          {% if l.minPrice %}<span class="line-card__price">{{ l.minPrice | yen }}〜</span>{% endif %}
+        </div>
+        <p class="line-card__lead reveal">{{ l.lead }}</p>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

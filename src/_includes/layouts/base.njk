@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set pageTitle = (title + ' | ' + site.name) if title else (site.name + ' | ' + site.tagline) %}
+  {%- set pageDesc = description or site.description %}
+  {%- set canonical = site.url + page.url %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDesc }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {%- if noindex %}<meta name="robots" content="noindex">{% endif %}
+  <meta name="theme-color" content="#F5F0E8">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDesc }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/{{ ogImage or 'hero-wrist' }}-1200.webp">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css?v={{ build }}">
+  {%- if preloadHero %}
+  <link rel="preload" as="image" imagesrcset="/assets/img/{{ preloadHero }}-640.webp 640w, /assets/img/{{ preloadHero }}-1200.webp 1200w" imagesizes="(min-width: 960px) 46vw, 100vw">
+  {%- endif %}
+  <script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": site.name,
+    "url": site.url,
+    "logo": site.url + "/favicon.svg",
+    "foundingDate": site.founded | string,
+    "email": site.email,
+    "sameAs": [site.amazon]
+  } | json | safe }}</script>
+  {% block head %}{% endblock %}
+</head>
+<body class="{{ bodyClass }}">
+  {% include "partials/header.njk" %}
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/main.js?v={{ build }}" defer></script>
+</body>
+</html>

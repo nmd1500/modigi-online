@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: ジャーナル
+description: Apple Watchレザーバンドの選び方、素材の違い、お手入れ方法など、革と暮らすための読みもの。
+permalink: /journal/
+---
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>ジャーナル</li></ol>
+    <p class="eyebrow">Journal</p>
+    <h1 class="display">革と暮らす、<br>ちいさな読みもの。</h1>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="posts">
+      {%- for post in collections.journal %}{% include "partials/post-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>

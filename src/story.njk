@@ -1,0 +1,62 @@
+---
+layout: layouts/base.njk
+title: ブランドストーリー
+description: 2015年、ベトナムの工房から生まれたMODIGI。職人の手仕事と選び抜いた本革で、Apple Watchのための上質なレザーバンドを仕立てています。
+permalink: /story/
+ogImage: craft-stitch
+---
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>ブランドストーリー</li></ol>
+    <p class="eyebrow">Our Story — Since {{ site.founded }}</p>
+    <h1 class="display">ひと針に、<br>想いを込めて。</h1>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container split">
+    <div class="split__media split__media--tall reveal-img">{% img "craft-stitch", "職人が革を手縫いする手元", "(min-width: 960px) 50vw, 100vw", "eager" %}</div>
+    <div class="prose">
+      <p class="eyebrow reveal">Chapter I</p>
+      <h2 class="h2 reveal">ベトナムの手仕事に、魅せられて。</h2>
+      <p class="lead reveal" style="margin-top:28px">ベトナムには、何世代にもわたって受け継がれてきた革の手仕事があります。針と糸、そして職人の指先だけで生み出される、温もりのある一本。</p>
+      <p class="lead reveal">MODIGIは2015年、その技に魅せられた私たちが「この手仕事を、毎日身に着けるものに」という想いから立ち上げたブランドです。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--night">
+  <div class="container container--narrow" style="text-align:center">
+    <p class="eyebrow reveal" style="justify-content:center">Philosophy</p>
+    <p class="display reveal" style="font-size:clamp(24px,3.2vw,40px);line-height:1.9">ベトナムの職人技で、<br>世界にひとつの表情を。</p>
+    <p class="lead reveal" style="margin:32px auto 0">同じ型紙、同じ革でも、職人の手で仕立てたものはひとつとして同じにはなりません。わずかな革目の違い、ステッチの陰影。それこそが、量産品にはない手仕事の価値だと、私たちは考えています。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow">Process</p>
+      <h2 class="h2">一本が仕上がるまで。</h2>
+    </div>
+    <div class="pillars" style="grid-template-columns:repeat(4,1fr)">
+      <div class="pillar reveal"><span class="pillar__num">01 — Select</span><h3 class="h3">革を選ぶ</h3><p>キズや色ムラを一枚ずつ確かめ、バンドに最適な部位だけを選び取ります。</p></div>
+      <div class="pillar reveal" style="--d:.08s"><span class="pillar__num">02 — Cut</span><h3 class="h3">裁断する</h3><p>革の繊維の向きを読みながら、表革と裏革を正確に切り出します。</p></div>
+      <div class="pillar reveal" style="--d:.16s"><span class="pillar__num">03 — Stitch</span><h3 class="h3">手で縫う</h3><p>菱目打ちで穴をあけ、二本の針で一針ずつ。ほつれにくいサドルステッチで縫い上げます。</p></div>
+      <div class="pillar reveal" style="--d:.24s"><span class="pillar__num">04 — Finish</span><h3 class="h3">コバを磨く</h3><p>断面（コバ）を何度も染めては磨き、なめらかで美しい縁に仕上げます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="container split split--reverse">
+    <div class="split__media split__media--square reveal-img">{% img "swift-colors", "多彩なカラーのMODIGIレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div>
+      <p class="eyebrow reveal">Chapter II</p>
+      <h2 class="h2 reveal">日本の皆さまへ。</h2>
+      <p class="lead reveal" style="margin-top:28px">品質に厳しい日本のお客様に選ばれることは、私たちの誇りです。細部へのこだわり、丁寧な検品、そしてギフトにふさわしい梱包まで。手首に着けた瞬間に「いいものだ」と感じていただける一本を、これからも届けてまいります。</p>
+      <div class="btn-row reveal"><a class="btn" href="/collection/">コレクションを見る</a></div>
+    </div>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

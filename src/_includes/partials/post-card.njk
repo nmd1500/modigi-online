@@ -1,0 +1,6 @@
+<a class="post-card reveal" href="{{ post.url }}" style="--d:{{ loop.index0 * 0.08 }}s">
+  <div class="post-card__media">{% img post.data.image, "", "(min-width: 960px) 33vw, 100vw" %}</div>
+  <time datetime="{{ post.date | isoDate }}">{{ post.date | jaDate }}</time>
+  <h3 class="h3">{{ post.data.title }}</h3>
+  <p>{{ post.data.description }}</p>
+</a>

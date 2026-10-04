@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+title: 素材とお手入れ
+description: MODIGIが使用するヴォー・スイフト、ヴォー・エプソン、クロコダイル、バレニア、ツェルマット・カーフの特徴と、本革Apple Watchバンドを長く愛用するためのお手入れ方法。
+permalink: /materials/
+ogImage: swift-colors
+---
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>素材とお手入れ</li></ol>
+    <p class="eyebrow">Materials &amp; Care</p>
+    <h1 class="display">素材を知り、<br>長く愛する。</h1>
+    <p class="lead">MODIGIのバンドに使われるレザーは、それぞれに異なる個性を持っています。素材の特徴と、美しく育てるためのお手入れをご紹介します。</p>
+  </div>
+</section>
+
+{%- set mats = [
+  { id: 'swift', en: 'Veau Swift', ja: 'ヴォー・スイフト', img: 'swift-buckle', text: '雄の仔牛の革を丁寧になめし、表面を浅くマットに仕上げたカーフレザー。手に吸い付くようななめらかさと、ほどよい弾力、そして鮮やかな発色が特長です。柔らかく、着け始めから手首によく馴染みます。', traits: ['しなやか', '発色が美しい', 'マットな質感'], link: '/collection/swift/' },
+  { id: 'epsom', en: 'Veau Epsom', ja: 'ヴォー・エプソン', img: 'epsom-wrap', text: '仔牛革の表面に細かな型押しを施したレザー。軽く、傷や水に強く、形が崩れにくいのが魅力です。シャープな印象を長く保ちたい方、毎日アクティブに使いたい方に。', traits: ['軽い', '傷に強い', '型崩れしにくい'], link: '/collection/epsom/' },
+  { id: 'crocodile', en: 'Crocodile', ja: 'クロコダイル', img: 'croco-buckle', text: '腹部の均整なスクエアグレインだけを厳選した、MODIGIの最上位素材。磨き上げた自然な艶と立体感のある革目が、手首に格別の存在感を添えます。', traits: ['最上位素材', '自然な艶', '一点ごとに異なる革目'], link: '/collection/crocodile/' },
+  { id: 'barenia', en: 'Barenia', ja: 'バレニア', img: 'swift-black', text: 'オイルをたっぷりと含ませて仕上げたカーフレザー。使うほどに深い飴色へと変化し、艶を増していきます。経年変化を存分に楽しみたい方のための「育てる革」です。', traits: ['経年変化', '深い艶', '育てる楽しみ'], link: '/collection/swift/' }
+] %}
+
+{% for m in mats %}
+<section class="section{% if loop.index0 % 2 %} section--paper{% endif %}" id="{{ m.id }}">
+  <div class="container split{% if loop.index0 % 2 %} split--reverse{% endif %}">
+    <div class="split__media split__media--square reveal-img">{% img m.img, m.ja + "のレザー", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div>
+      <p class="eyebrow reveal">No. 0{{ loop.index }}</p>
+      <h2 class="reveal"><span class="latin" style="display:block;font-size:clamp(36px,4.4vw,60px);line-height:1.1">{{ m.en }}</span><span class="h3 muted" style="display:block;margin-top:8px">{{ m.ja }}</span></h2>
+      <p class="lead reveal" style="margin-top:28px">{{ m.text }}</p>
+      <div class="chips reveal" style="margin-top:8px">{% for t in m.traits %}<span class="chip">{{ t }}</span>{% endfor %}</div>
+      <p class="reveal" style="margin-top:32px"><a class="link-arrow" href="{{ m.link }}">このコレクションを見る</a></p>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+<section class="section section--night">
+  <div class="container split">
+    <div>
+      <p class="eyebrow reveal">Lining</p>
+      <h2 class="h2 reveal">裏地は、ツェルマット・カーフ。</h2>
+      <p class="lead reveal" style="margin-top:28px">肌に触れる裏側には、防水・防汚加工を施した上質なカーフスキンを採用。汗を吸いにくく、さらりとした肌ざわりが続きます。見えない部分こそ、着け心地を左右する大切な素材です。</p>
+      <div class="stats reveal">
+        <div><div class="stat__num" style="font-size:22px;font-family:var(--f-mincho)">肌にやさしい</div></div>
+        <div><div class="stat__num" style="font-size:22px;font-family:var(--f-mincho)">汗・水に強い</div></div>
+        <div><div class="stat__num" style="font-size:22px;font-family:var(--f-mincho)">軽く柔らか</div></div>
+      </div>
+    </div>
+    <div class="split__media split__media--square reveal-img">{% img "epsom-wrap-2", "レザーバンドの裏地", "(min-width: 960px) 50vw, 100vw" %}</div>
+  </div>
+</section>
+
+<section class="section" id="care">
+  <div class="container container--narrow">
+    <div class="section-head section-head--center reveal" style="margin-bottom:56px">
+      <p class="eyebrow">Care</p>
+      <h2 class="h2">お手入れの基本</h2>
+    </div>
+    <div class="prose reveal" style="margin-inline:auto">
+      <h3>日常のお手入れ</h3>
+      <ul>
+        <li>使用後は柔らかい乾いた布で、汗や皮脂をやさしく拭き取ってください。</li>
+        <li>週に一度は時計から外し、風通しのよい日陰で休ませると長持ちします。</li>
+        <li>月に一度を目安に、少量のレザー用クリームを薄く塗り広げると、しなやかさと艶が保たれます。</li>
+      </ul>
+      <h3>濡れてしまったら</h3>
+      <ul>
+        <li>すぐに乾いた布で水分を押さえるように拭き取ります。こすらないのがポイントです。</li>
+        <li>ドライヤーや直射日光は避け、陰干しで自然に乾かしてください。</li>
+      </ul>
+      <h3>避けていただきたいこと</h3>
+      <ul>
+        <li>入浴・水泳・激しい運動時のご使用（スポーツ時は別バンドへの付け替えがおすすめです）。</li>
+        <li>香水やアルコール、除光液などが直接触れること。</li>
+        <li>高温多湿の場所での長期保管。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% include "partials/cta.njk" %}

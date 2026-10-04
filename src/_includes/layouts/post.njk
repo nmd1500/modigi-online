@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": page.date | isoDate,
+  "image": site.url + "/assets/img/" + image + "-1200.webp",
+  "author": { "@type": "Organization", "name": "MODIGI" },
+  "publisher": { "@type": "Organization", "name": "MODIGI" }
+} | json | safe }}</script>
+<article>
+  <header class="page-hero">
+    <div class="container container--narrow">
+      <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li><a href="/journal/">ジャーナル</a></li><li>{{ category }}</li></ol>
+      <p class="eyebrow"><time datetime="{{ page.date | isoDate }}">{{ page.date | jaDate }}</time></p>
+      <h1 class="display" style="font-size:clamp(28px,3.8vw,46px)">{{ title }}</h1>
+      <p class="lead">{{ description }}</p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="article-hero">{% img image, title, "(min-width: 1320px) 1272px, 100vw", "eager" %}</div>
+  </div>
+  <div class="container container--narrow">
+    <div class="prose" style="margin-inline:auto;padding-bottom:var(--section)">
+      {{ content | safe }}
+      <div class="inline-cta">
+        <p>MODIGIの本革バンドを見る</p>
+        <a class="btn" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="post-{{ page.fileSlug }}">Amazonで購入する</a>
+      </div>
+    </div>
+  </div>
+</article>
+{% include "partials/cta.njk" %}

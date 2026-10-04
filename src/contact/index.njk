@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+title: お問い合わせ
+description: MODIGIへのお問い合わせはこちらから。商品・サイズ・ご注文・法人のご相談など、お気軽にご連絡ください。
+---
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>お問い合わせ</li></ol>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container contact-grid">
+    <div class="contact-aside">
+      <p class="eyebrow">Contact</p>
+      <h1 class="display" style="font-size:clamp(30px,4vw,48px)">お問い合わせ</h1>
+      <p class="lead" style="margin-top:28px">商品やサイズ選び、ご注文、法人・卸のご相談など、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。</p>
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+        <dt>Online Store</dt><dd><a href="{{ site.amazon }}" target="_blank" rel="noopener">Amazon公式ストア</a></dd>
+        <dt>Before you ask</dt><dd><a href="/faq/" class="link-arrow">よくあるご質問</a></dd>
+      </dl>
+    </div>
+    <form class="form" action="/contact.php" method="post" novalidate data-contact>
+      <div class="alert" role="alert" hidden data-form-error>送信できませんでした。入力内容をご確認のうえ、時間をおいて再度お試しいただくか、メールにて直接ご連絡ください。</div>
+      <div class="field">
+        <label for="f-name">お名前<span class="req">必須</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100" aria-describedby="f-name-error">
+        <p class="field__error" id="f-name-error" hidden>お名前をご入力ください。</p>
+      </div>
+      <div class="field">
+        <label for="f-email">メールアドレス<span class="req">必須</span></label>
+        <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" aria-describedby="f-email-error">
+        <p class="field__error" id="f-email-error" hidden>正しいメールアドレスをご入力ください。</p>
+      </div>
+      <div class="field">
+        <label for="f-topic">お問い合わせ種別</label>
+        <select id="f-topic" name="topic">
+          <option value="product">商品について</option>
+          <option value="size">サイズ・対応機種について</option>
+          <option value="order">ご注文・配送について</option>
+          <option value="wholesale">法人・卸のご相談</option>
+          <option value="other">その他</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-order">Amazon注文番号<span class="muted" style="margin-left:6px;font-size:12px">任意</span></label>
+        <input id="f-order" name="order" type="text" maxlength="60" aria-describedby="f-order-hint">
+        <p class="field__hint" id="f-order-hint">例：250-1234567-1234567（ご注文に関するお問い合わせの場合）</p>
+      </div>
+      <div class="field">
+        <label for="f-message">お問い合わせ内容<span class="req">必須</span></label>
+        <textarea id="f-message" name="message" required maxlength="5000" aria-describedby="f-message-error"></textarea>
+        <p class="field__error" id="f-message-error" hidden>お問い合わせ内容をご入力ください。</p>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <input type="hidden" name="ts" value="">
+      <div>
+        <label class="consent"><input id="f-consent" type="checkbox" name="consent" value="1" required aria-describedby="f-consent-error"><span><a href="/privacy/" target="_blank">プライバシーポリシー</a>に同意します</span></label>
+        <p class="field__error" id="f-consent-error" hidden>プライバシーポリシーへの同意が必要です。</p>
+      </div>
+      <div><button class="btn" type="submit">送信する</button></div>
+    </form>
+  </div>
+</section>

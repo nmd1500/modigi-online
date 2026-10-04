@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+title: よくあるご質問
+description: MODIGI Apple Watchレザーバンドのサイズ・対応機種、素材とお手入れ、ご購入・配送に関するよくあるご質問。
+permalink: /faq/
+---
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faq | faqSchema
+} | json | safe }}</script>
+<section class="page-hero">
+  <div class="container container--narrow">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>よくあるご質問</li></ol>
+    <p class="eyebrow">FAQ</p>
+    <h1 class="display">よくあるご質問</h1>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container container--narrow">
+    {% for g in faq %}
+    <div class="faq-group reveal">
+      <h2 class="h3">{{ g.group }}</h2>
+      <div class="faq">
+        {% for q in g.items %}<details><summary>{{ q[0] }}</summary><div class="faq__a prose">{{ q[1] | safe }}</div></details>{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <div class="inline-cta reveal">
+      <p>解決しない場合は、お気軽にご相談ください。</p>
+      <a class="btn btn--ghost" href="/contact/">お問い合わせ</a>
+    </div>
+  </div>
+</section>

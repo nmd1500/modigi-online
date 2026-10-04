@@ -1,0 +1,122 @@
+{
+  "hero-wrist": {
+    "widths": [
+      640,
+      1200,
+      1792
+    ],
+    "ratio": 0.7467
+  },
+  "swift-black": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1
+  },
+  "swift-colors": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.6667
+  },
+  "swift-buckle": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.2195
+  },
+  "swift-boxed": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.2195
+  },
+  "craft-stitch": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.2195
+  },
+  "gift-box": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.5621
+  },
+  "croco-life": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.1628
+  },
+  "croco-buckle": {
+    "widths": [
+      640,
+      1160
+    ],
+    "ratio": 1.3182
+  },
+  "epsom-wrap": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  },
+  "epsom-wrap-2": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  },
+  "epsom-etoupe": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  },
+  "epsom-noir": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  },
+  "epsom-orange": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  },
+  "epsom-box": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  },
+  "epsom-etoupe-watch": {
+    "widths": [
+      640,
+      886
+    ],
+    "ratio": 1
+  }
+}
