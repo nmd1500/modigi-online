@@ -48,7 +48,7 @@ Mỗi lần `git push` lên nhánh `main`, GitHub Actions sẽ build và upload 
    - `FTP_SERVER`: ví dụ `ftp.modigi.online` hoặc IP
    - `FTP_USERNAME`: ví dụ `u123456789.modigi.online`
    - `FTP_PASSWORD`
-   - *(tuỳ chọn)* `FTP_SERVER_DIR`: mặc định `public_html/`. Nếu sau khi đăng nhập FTP bạn đã ở sẵn trong `public_html`, đặt giá trị này là `./`
+   - *(tuỳ chọn)* `FTP_SERVER_DIR`: mặc định `domains/modigi.online/public_html/` (thư mục web của Hostinger khi dùng tài khoản FTP chính)
 3. hPanel → **Emails**: tạo hộp thư `noreply@modigi.online` để form liên hệ gửi mail không bị rơi vào spam.
 4. Vào tab **Actions** trên GitHub để xem tiến trình deploy.
 
