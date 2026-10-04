@@ -1,7 +1,7 @@
 {
   "name": "modigi-web",
   "version": "1.0.0",
-  "description": "MODIGI 公式サイト — modigi.jp",
+  "description": "MODIGI 公式サイト — modigi.online",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",

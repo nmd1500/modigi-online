@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 const TO_EMAIL   = 'modigijp@gmail.com';
-const FROM_EMAIL = 'noreply@modigi.jp';   // Tạo hộp thư này trong hPanel → Emails để mail không bị vào spam
+const FROM_EMAIL = 'noreply@modigi.online';   // Tạo hộp thư này trong hPanel → Emails để mail không bị vào spam
 const SUBJECTS   = ['product' => '商品について', 'size' => 'サイズ・対応機種について', 'order' => 'ご注文・配送について', 'wholesale' => '法人・卸のご相談', 'other' => 'その他'];
 
 function back(string $q): never {

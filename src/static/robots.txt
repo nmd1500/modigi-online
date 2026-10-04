@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /contact.php
 
-Sitemap: https://modigi.jp/sitemap.xml
+Sitemap: https://modigi.online/sitemap.xml

@@ -1,6 +1,6 @@
 export default {
   name: 'MODIGI',
-  url: 'https://modigi.jp',
+  url: 'https://modigi.online',
   lang: 'ja',
   tagline: 'あなたのApple Watchに、上質な一本を。',
   description:

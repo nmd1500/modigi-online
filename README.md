@@ -1,4 +1,4 @@
-# MODIGI — modigi.jp
+# MODIGI — modigi.online
 
 Website thương hiệu MODIGI (tiếng Nhật). Static site viết bằng Node.js ([Eleventy](https://www.11ty.dev/)), build ra HTML/CSS thuần nên chạy được trên gói Hostinger Premium/Single (shared hosting).
 
@@ -45,11 +45,11 @@ Mỗi lần `git push` lên nhánh `main`, GitHub Actions sẽ build và upload 
 
 1. hPanel → **Files → FTP Accounts**: ghi lại *FTP IP/hostname*, *username*, đặt *password*.
 2. GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**, tạo:
-   - `FTP_SERVER`: ví dụ `ftp.modigi.jp` hoặc IP
-   - `FTP_USERNAME`: ví dụ `u123456789.modigi.jp`
+   - `FTP_SERVER`: ví dụ `ftp.modigi.online` hoặc IP
+   - `FTP_USERNAME`: ví dụ `u123456789.modigi.online`
    - `FTP_PASSWORD`
    - *(tuỳ chọn)* `FTP_SERVER_DIR`: mặc định `public_html/`. Nếu sau khi đăng nhập FTP bạn đã ở sẵn trong `public_html`, đặt giá trị này là `./`
-3. hPanel → **Emails**: tạo hộp thư `noreply@modigi.jp` để form liên hệ gửi mail không bị rơi vào spam.
+3. hPanel → **Emails**: tạo hộp thư `noreply@modigi.online` để form liên hệ gửi mail không bị rơi vào spam.
 4. Vào tab **Actions** trên GitHub để xem tiến trình deploy.
 
 > Nếu bước FTP báo lỗi TLS, đổi `protocol: ftps` thành `protocol: ftp` trong `.github/workflows/deploy.yml`.
