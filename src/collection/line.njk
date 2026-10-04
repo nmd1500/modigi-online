@@ -93,7 +93,7 @@ eleventyComputed:
       {%- for l in lines %}{% if l.slug != line.slug %}
       <a class="post-card reveal" href="/collection/{{ l.slug }}/">
         <div class="post-card__media">{% img l.hero, l.ja + "のApple Watchレザーバンド", "(min-width: 960px) 33vw, 100vw" %}</div>
-        <h3 class="line-card__en">{{ l.en }}</h3>
+        <h3 class="card__title">{{ l.en }}</h3>
         <p>{{ l.ja }}{% if l.minPrice %} — {{ l.minPrice | yen }}〜{% endif %}</p>
       </a>
       {%- endif %}{% endfor %}

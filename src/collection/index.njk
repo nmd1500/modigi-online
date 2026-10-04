@@ -13,16 +13,19 @@ description: MODIGIのApple Watch用本革バンド全コレクション。ク�
 </section>
 <section class="section" style="padding-top:0">
   <div class="container">
-    <div class="lines">
+    <div class="rows">
       {%- for l in lines %}
-      <a class="line-card" href="/collection/{{ l.slug }}/">
-        <div class="line-card__media reveal-img">{% img l.hero, l.ja + "のApple Watchレザーバンド", "(min-width: 960px) 50vw, 100vw", ("eager" if loop.first else "lazy") %}</div>
-        <div class="line-card__meta reveal">
-          <div><h2 class="line-card__en">{{ l.en }}</h2><span class="line-card__ja">{{ l.ja }} ／ {{ l.kana }}</span></div>
-          {% if l.minPrice %}<span class="line-card__price">{{ l.minPrice | yen }}〜</span>{% endif %}
+      <article class="row">
+        <a class="row__media reveal-img" href="/collection/{{ l.slug }}/" tabindex="-1" aria-hidden="true">{% img l.hero, "", "(min-width: 960px) 58vw, 100vw", ("eager" if loop.first else "lazy") %}</a>
+        <div>
+          <span class="row__num reveal">No. 0{{ loop.index }}</span>
+          <h2 class="row__en reveal"><a href="/collection/{{ l.slug }}/">{{ l.en }}</a></h2>
+          <span class="row__ja reveal">{{ l.ja }} ／ {{ l.kana }}</span>
+          <p class="lead reveal">{{ l.lead }}</p>
+          {% if l.minPrice %}<p class="row__price reveal">{{ l.minPrice | yen }}<small>〜 税込・全{{ l.count }}モデル</small></p>{% endif %}
+          <div class="btn-row reveal"><a class="btn btn--gold" href="/collection/{{ l.slug }}/">詳しく見る</a></div>
         </div>
-        <p class="line-card__lead reveal">{{ l.lead }}</p>
-      </a>
+      </article>
       {%- endfor %}
     </div>
   </div>

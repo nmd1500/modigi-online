@@ -10,10 +10,7 @@ window.addEventListener('scroll', () => {
   ticking = true;
   requestAnimationFrame(() => {
     const y = window.scrollY;
-    const overHero = header.classList.contains('is-over-hero');
-    header.classList.toggle('is-scrolled', overHero ? y > window.innerHeight * 0.55 : y > 8);
-    const menuOpen = document.body.classList.contains('menu-open');
-    header.classList.toggle('is-hidden', !menuOpen && y > 400 && y > lastY);
+    header.classList.toggle('is-scrolled', header.getBoundingClientRect().top <= 0 && y > 40);
     lastY = y;
     ticking = false;
   });
@@ -24,6 +21,7 @@ const btn = document.querySelector('[data-menu-btn]');
 const drawer = document.querySelector('[data-drawer]');
 function setMenu(open) {
   btn.setAttribute('aria-expanded', String(open));
+  drawer.style.top = header.getBoundingClientRect().bottom + 'px';
   drawer.hidden = !open;
   document.body.classList.toggle('menu-open', open);
   if (open) drawer.querySelector('a')?.focus();

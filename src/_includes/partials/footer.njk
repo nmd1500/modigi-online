@@ -1,13 +1,9 @@
 <footer class="site-footer">
   <div class="container">
-    <div class="site-footer__top">
-      <a href="/" aria-label="MODIGI ホーム"><span class="logo-mark" aria-hidden="true"></span></a>
-      <span class="logo-slogan" role="img" aria-label="Make Your Style"></span>
-    </div>
     <div class="site-footer__grid">
       <div class="site-footer__about">
-        <h2 class="site-footer__h">Maison MODIGI</h2>
-        <p>Handcrafted leather for Apple Watch.<br>Stitched by hand in Vietnam, since {{ site.founded }}.</p>
+        <a href="/" aria-label="MODIGI ホーム"><span class="logo-mark logo--gold" aria-hidden="true"></span></a>
+        <span class="logo-slogan logo--gold" role="img" aria-label="Make Your Style"></span>
       </div>
       <nav aria-label="フッター：製品">
         <h2 class="site-footer__h">Collection</h2>
@@ -28,9 +24,17 @@
           <li><a href="/faq/">よくあるご質問</a></li>
           <li><a href="/contact/">お問い合わせ</a></li>
           <li><a href="/privacy/">プライバシーポリシー</a></li>
-          <li><a href="{{ site.amazon }}" target="_blank" rel="noopener">Amazon公式ストア</a></li>
         </ul>
       </nav>
+    </div>
+    <div class="site-footer__bar">
+      <a class="site-footer__mini" href="/" aria-label="MODIGI ホーム"><span class="logo-mark logo--gold" aria-hidden="true"></span></a>
+      <p class="site-footer__tagline">Quality. Craftsmanship. Heritage.</p>
+      <div class="site-footer__social">
+        <a href="{{ site.amazon }}" target="_blank" rel="noopener" aria-label="Amazon公式ストア"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.5c4.5 3 11.5 3 16 0M17 14.5l3 1-1 3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 11.5c0-2.2 1.8-3.5 4-3.5s4 1 4 3v4" stroke-linecap="round"/></svg></a>
+        <a href="mailto:{{ site.email }}" aria-label="メール"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" stroke-linejoin="round"/></svg></a>
+        <a href="/contact/" aria-label="お問い合わせ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z" stroke-linejoin="round"/></svg></a>
+      </div>
     </div>
     <div class="site-footer__base">
       <small>&copy; {{ site.founded }}–{% year %} MODIGI. All rights reserved.</small>
