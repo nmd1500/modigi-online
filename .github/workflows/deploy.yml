@@ -3,7 +3,6 @@ name: Deploy to Hostinger
 on:
   push:
     branches: [main]
-    paths-ignore: ['.github/workflows/ftp-inspect.yml']
   workflow_dispatch:
 
 concurrency:
