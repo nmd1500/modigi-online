@@ -1,109 +1,141 @@
 ---
 layout: layouts/base.njk
+transparentHeader: true
 preloadHero: hero-wrist
+heroSlides:
+  - img: hero-wrist
+    alt: 木のテーブルの上、MODIGIの黒い本革バンドを着けたApple Watchとコーヒー
+  - img: croco-life
+    alt: クロコダイルレザーバンドを着けて手帳に書き込む手元
+  - img: gift-box
+    alt: リボンをかけたMODIGIのギフトボックス
+lookbook:
+  - { img: swift-black, en: Veau Swift, ja: ノワール }
+  - { img: croco-buckle, en: Crocodile, ja: オニキスブラック }
+  - { img: epsom-noir, en: Veau Epsom, ja: ノワール × オレンジ }
+  - { img: swift-buckle, en: Veau Swift, ja: バックル ディテール }
+  - { img: epsom-orange, en: Veau Epsom, ja: オレンジ }
+  - { img: epsom-wrap, en: Veau Epsom, ja: エトープ }
+  - { img: swift-boxed, en: Essential, ja: ノワール }
+  - { img: epsom-etoupe-watch, en: Veau Epsom, ja: エトープ × オレンジ }
 ---
-{%- set featured = lines %}
-<section class="hero">
-  <div class="container hero__grid">
-    <div class="hero__copy">
-      <p class="eyebrow hero__fade">Handcrafted in Vietnam, since {{ site.founded }}</p>
-      <h1 class="display hero__title">
-        <span class="line"><span>あなたの</span></span>
-        <span class="line"><span><span class="nw">Apple Watch</span>に、</span></span>
-        <span class="line"><span>上質な一本を。</span></span>
-      </h1>
-      <p class="hero__sub hero__fade">Leather bands, stitched by hand — one at a time.</p>
-      <p class="lead hero__fade">ベトナムの職人が、選び抜いた本革を一針ずつ手縫いで仕立てる。<br class="pc">MODIGIは、手首にいちばん近い場所に、確かな手仕事を届けます。</p>
-      <div class="btn-row hero__fade">
-        <a class="btn" href="/collection/">コレクションを見る</a>
-        <a class="btn btn--ghost" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="hero">Amazon公式ストア</a>
-      </div>
+<section class="hero" data-hero>
+  <div class="hero__slides">
+    {%- for s in heroSlides %}
+    <div class="hero__slide{% if loop.first %} is-active{% endif %}" data-slide>
+      {% img s.img, s.alt, "100vw", ("eager" if loop.first else "lazy") %}
     </div>
-    <div class="hero__media">
-      {% img "hero-wrist", "木のテーブルの上、MODIGIの黒い本革バンドを着けたApple Watchとコーヒー", "(min-width: 960px) 46vw, 100vw", "eager" %}
-      <p class="hero__badge"><strong>{{ site.founded }}</strong>ESTABLISHED</p>
+    {%- endfor %}
+  </div>
+  <div class="hero__content">
+    <p class="hero__eyebrow hero__fade">Handcrafted in Vietnam · Since {{ site.founded }}</p>
+    <h1 class="hero__title">
+      <span class="line"><span>あなたの<span class="nw">Apple Watch</span>に、</span></span>
+      <span class="line"><span>上質な一本を。</span></span>
+    </h1>
+    <p class="hero__sub hero__fade">Leather bands, stitched by hand — one at a time.</p>
+    <div class="btn-row hero__fade">
+      <a class="btn btn--light" href="/collection/">コレクションを見る</a>
+      <a class="btn btn--outline-light" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="hero">Amazon公式ストア</a>
+    </div>
+  </div>
+  <div class="hero__dots" role="group" aria-label="スライド">
+    {%- for s in heroSlides %}<button type="button" aria-label="スライド {{ loop.index }}"{% if loop.first %} aria-current="true"{% endif %} data-dot></button>{% endfor %}
+  </div>
+  <span class="hero__scroll" aria-hidden="true">SCROLL</span>
+</section>
+
+<section class="section manifesto">
+  <div class="container container--mid">
+    <span class="logo-crown reveal" aria-hidden="true"></span>
+    <p class="eyebrow reveal" style="justify-content:center">The Maison</p>
+    <p class="manifesto__text reveal"><span>選び抜いた本革を、</span><span>ベトナムの職人が一針ずつ縫い上げる。</span><br><span>効率よりも、手仕事の確かさを。</span><br><span>流行よりも、長く寄り添う美しさを。</span><br><span>手首にいちばん近い場所に、</span><span>静かな上質を。</span></p>
+    <p class="manifesto__sign reveal">— MODIGI, since {{ site.founded }}</p>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow">Collection</p>
+      <h2 class="h2">素材から選ぶ、あなたの一本。</h2>
+      <p class="lead">素材ごとに異なる表情、手ざわり、経年変化。四つのラインから、装いと気分に合う一本をお選びください。</p>
+    </div>
+    <div class="rows">
+      {%- for l in lines %}
+      <article class="row">
+        <a class="row__media reveal-img" href="/collection/{{ l.slug }}/" tabindex="-1" aria-hidden="true">{% img l.hero, "", "(min-width: 960px) 58vw, 100vw" %}</a>
+        <div>
+          <span class="row__num reveal">No. 0{{ loop.index }}</span>
+          <h3 class="row__en reveal"><a href="/collection/{{ l.slug }}/">{{ l.en }}</a></h3>
+          <span class="row__ja reveal">{{ l.ja }} ／ {{ l.kana }}</span>
+          <p class="lead reveal">{{ l.lead }}</p>
+          {% if l.minPrice %}<p class="row__price reveal">{{ l.minPrice | yen }}<small>〜 税込</small></p>{% endif %}
+          <div class="btn-row reveal"><a class="link-arrow" href="/collection/{{ l.slug }}/">コレクションを見る</a></div>
+        </div>
+      </article>
+      {%- endfor %}
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track">
-    {%- for n in [1, 2] %}
-    <span>Veau Swift</span><span>Veau Epsom</span><span>Crocodile</span><span>Barenia</span><span>Hand-stitched</span><span>Zermatt Lining</span><span>38 — 49 mm</span>
-    {%- endfor %}
-  </div>
-</div>
+<section class="band" data-parallax>
+  <div class="band__media" data-parallax-media>{% img "craft-stitch", "", "100vw" %}</div>
+  <blockquote class="reveal" style="margin:0">
+    <p class="band__quote">一針ずつ、<br>想いを縫い込む。</p>
+    <cite class="band__cite">Hand-stitched in Vietnam</cite>
+  </blockquote>
+</section>
 
-<section class="section">
+<section class="section section--night">
   <div class="container">
     <div class="section-head">
       <div class="reveal">
-        <p class="eyebrow">The MODIGI Way</p>
+        <p class="eyebrow">The Craft</p>
         <h2 class="h2">見えない部分にこそ、<br>手間を惜しまない。</h2>
       </div>
       <p class="lead reveal" style="--d:.1s">表革の選定から、裁断、手縫い、コバ磨きまで。工業製品では省かれてしまう工程を、ひとつずつ人の手で。だからこそ、毎日着けるほどに違いがわかります。</p>
     </div>
     <div class="pillars">
       <div class="pillar reveal">
-        <span class="pillar__num">I — Hand-stitched</span>
+        <span class="pillar__num">I</span>
         <h3 class="h3">職人による手縫い</h3>
-        <p>強度の高いワックス糸を使い、一針ずつ手作業で縫い上げます。機械縫いに比べてほつれにくく、ステッチそのものが美しい表情になります。</p>
+        <p>強度の高い縫い糸で、一針ずつ手作業で縫い上げます。機械縫いに比べてほつれにくく、ステッチそのものが美しい表情になります。</p>
       </div>
       <div class="pillar reveal" style="--d:.1s">
-        <span class="pillar__num">II — Fine Leather</span>
+        <span class="pillar__num">II</span>
         <h3 class="h3">選び抜いた本革</h3>
-        <p>フランス産カーフやクロコダイルなど、最高級のレザーを厳選。裏地には防水加工のツェルマット・カーフを合わせ、汗ばむ季節も快適です。</p>
+        <p>フランス産カーフやクロコダイルなど、上質なレザーを厳選。裏地には防水加工のツェルマット・カーフを合わせ、汗ばむ季節も快適です。</p>
       </div>
       <div class="pillar reveal" style="--d:.2s">
-        <span class="pillar__num">III — Every Size</span>
+        <span class="pillar__num">III</span>
         <h3 class="h3">全モデル・全サイズ対応</h3>
         <p>Series 4〜11、SE、Ultraまで。38mmから49mmまでのすべてのApple Watchにフィット。工具不要のワンタッチで付け替えられます。</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section section--paper">
-  <div class="container">
-    <div class="section-head">
-      <div class="reveal">
-        <p class="eyebrow">Collection</p>
-        <h2 class="h2">素材から選ぶ、<br>あなたの一本。</h2>
-      </div>
-      <div class="reveal" style="--d:.1s">
-        <p class="lead">素材ごとに異なる表情、手ざわり、経年変化。四つのラインから、装いと気分に合う一本をお選びください。</p>
-        <a class="link-arrow" href="/collection/" style="margin-top:24px">すべてのコレクション</a>
-      </div>
-    </div>
-    <div class="lines">
-      {%- for l in featured %}
-      <a class="line-card" href="/collection/{{ l.slug }}/">
-        <div class="line-card__media reveal-img">{% img l.hero, l.ja + "のApple Watchレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
-        <div class="line-card__meta reveal">
-          <div><h3 class="line-card__en">{{ l.en }}</h3><span class="line-card__ja">{{ l.ja }} ／ {{ l.kana }}</span></div>
-          {% if l.minPrice %}<span class="line-card__price">{{ l.minPrice | yen }}〜</span>{% endif %}
-        </div>
-        <p class="line-card__lead reveal">{{ l.lead }}</p>
-      </a>
-      {%- endfor %}
+    <div class="stats reveal">
+      <div><div class="stat__num">{{ site.founded }}</div><div class="stat__label">創業</div></div>
+      <div><div class="stat__num">100<span style="font-size:.5em">%</span></div><div class="stat__label">手縫い仕上げ</div></div>
+      <div><div class="stat__num">38–49</div><div class="stat__label">mm 全サイズ対応</div></div>
     </div>
   </div>
 </section>
 
-<section class="section section--night">
-  <div class="container split">
-    <div class="split__media split__media--tall reveal-img">{% img "craft-stitch", "職人が革を手縫いし、コバを仕上げる工程", "(min-width: 960px) 50vw, 100vw" %}</div>
-    <div>
-      <p class="eyebrow reveal">Our Story</p>
-      <h2 class="h2 reveal">{{ site.founded }}年、<br>ベトナムの工房から。</h2>
-      <p class="lead reveal" style="margin-top:28px">MODIGIは、ベトナムに受け継がれてきた革の手仕事に魅せられ、2015年に生まれました。大量生産では決して生まれない、ひとつひとつ表情の異なる一本を。職人の技と誇りを、あなたの日常へ。</p>
-      <div class="stats reveal">
-        <div><div class="stat__num">{{ site.founded }}</div><div class="stat__label">創業</div></div>
-        <div><div class="stat__num">100<span style="font-size:.5em">%</span></div><div class="stat__label">手縫い仕上げ</div></div>
-        <div><div class="stat__num">38–49</div><div class="stat__label">mm 全サイズ対応</div></div>
-      </div>
-      <div class="btn-row reveal"><a class="btn btn--ghost" href="/story/">ブランドストーリーを読む</a></div>
+<section class="section section--night lookbook" style="padding-top:0" aria-label="Lookbook">
+  <div class="container section-head" style="margin-bottom:56px">
+    <div class="reveal"><p class="eyebrow">Lookbook</p><h2 class="h2">手首の上の、<br>小さな風景。</h2></div>
+    <div class="lookbook__nav reveal" style="justify-self:end">
+      <button type="button" aria-label="前へ" data-look="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" aria-label="次へ" data-look="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
+  </div>
+  <div class="lookbook__track" data-look-track tabindex="0" aria-label="ルックブック画像（横にスクロール）">
+    {%- for item in lookbook %}
+    <figure>
+      <div class="lookbook__img">{% img item.img, item.en + " " + item.ja + " のApple Watchレザーバンド", "(min-width: 960px) 34vw, 78vw" %}</div>
+      <figcaption>{{ item.en }}<span>{{ item.ja }}</span></figcaption>
+    </figure>
+    {%- endfor %}
   </div>
 </section>
 
@@ -111,7 +143,7 @@ preloadHero: hero-wrist
   <div class="container">
     <div class="section-head section-head--center reveal">
       <p class="eyebrow">Materials</p>
-      <h2 class="h2">革を知ると、選ぶ時間が楽しくなる。</h2>
+      <h2 class="h2">革を知ると、<br>選ぶ時間が楽しくなる。</h2>
     </div>
     <div class="materials">
       <a class="material reveal" href="/collection/swift/">
@@ -135,29 +167,29 @@ preloadHero: hero-wrist
         <span class="material__en">Barenia</span><span class="material__ja">バレニア</span>
       </a>
     </div>
-    <p style="text-align:center;margin-top:48px"><a class="link-arrow" href="/materials/">素材とお手入れについて</a></p>
+    <p style="text-align:center;margin-top:56px"><a class="link-arrow" href="/materials/">素材とお手入れについて</a></p>
   </div>
 </section>
 
 <section class="section section--sand">
   <div class="container split split--reverse">
-    <div class="split__media split__media--square reveal-img">{% img "gift-box", "MODIGIオレンジのギフトボックスとリボン", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div class="split__media split__media--tall reveal-img">{% img "epsom-box", "MODIGIのギフトボックスとエプソンレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
     <div>
       <p class="eyebrow reveal">The Gift</p>
-      <h2 class="h2 reveal">大切な人へ、<br>贈る理由のある一本を。</h2>
-      <p class="lead reveal" style="margin-top:28px">すべてのバンドは、MODIGIオリジナルのギフトボックスに収めてお届けします。誕生日、記念日、昇進のお祝いに。開けた瞬間から、特別な時間がはじまります。</p>
-      <div class="btn-row reveal"><a class="btn" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="gift">ギフトを選ぶ（Amazon）</a></div>
+      <h2 class="h2 reveal">大切な人へ、<br><span class="nw">贈る理由のある</span><span class="nw">一本を。</span></h2>
+      <span class="gold-rule reveal"></span>
+      <p class="lead reveal">MODIGIのレザーバンドは、オリジナルのギフトボックスに収めてお届けします。誕生日、記念日、昇進のお祝いに。開けた瞬間から、特別な時間がはじまります。</p>
+      <div class="btn-row reveal"><a class="btn" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="gift">ギフトを選ぶ</a></div>
     </div>
   </div>
 </section>
-
 
 {% if collections.journal.length %}
 <section class="section">
   <div class="container">
     <div class="section-head">
       <div class="reveal"><p class="eyebrow">Journal</p><h2 class="h2">革と暮らす、<br>ちいさな読みもの。</h2></div>
-      <div class="reveal" style="--d:.1s"><a class="link-arrow" href="/journal/">すべての記事</a></div>
+      <div class="reveal" style="--d:.1s;justify-self:end"><a class="link-arrow" href="/journal/">すべての記事</a></div>
     </div>
     <div class="posts">
       {%- for post in collections.journal | head(3) %}

@@ -1,33 +1,40 @@
 <footer class="site-footer">
-  <div class="container site-footer__grid">
-    <div class="site-footer__brand">
-      <a class="brand brand--footer" href="/" aria-label="MODIGI ホーム">{% include "partials/emblem.njk" %}<span class="brand__word">MODIGI</span></a>
-      <p>Handcrafted leather for Apple Watch.<br>Since {{ site.founded }}, Vietnam.</p>
+  <div class="container">
+    <div class="site-footer__top">
+      <a href="/" aria-label="MODIGI ホーム"><span class="logo-mark" aria-hidden="true"></span></a>
+      <span class="logo-slogan" role="img" aria-label="Make Your Style"></span>
     </div>
-    <nav aria-label="フッター：製品">
-      <h2 class="site-footer__h">Collection</h2>
-      <ul>{% for l in lines %}<li><a href="/collection/{{ l.slug }}/">{{ l.ja }}</a></li>{% endfor %}</ul>
-    </nav>
-    <nav aria-label="フッター：ブランド">
-      <h2 class="site-footer__h">Maison</h2>
-      <ul>
-        <li><a href="/story/">ブランドストーリー</a></li>
-        <li><a href="/materials/">素材とお手入れ</a></li>
-        <li><a href="/journal/">ジャーナル</a></li>
-      </ul>
-    </nav>
-    <nav aria-label="フッター：サポート">
-      <h2 class="site-footer__h">Support</h2>
-      <ul>
-        <li><a href="/guide/">サイズガイド</a></li>
-        <li><a href="/faq/">よくあるご質問</a></li>
-        <li><a href="/contact/">お問い合わせ</a></li>
-        <li><a href="/privacy/">プライバシーポリシー</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="container site-footer__base">
-    <small>&copy; {{ site.founded }}–{% year %} MODIGI. All rights reserved.</small>
-    <small>Apple Watchは、米国およびその他の国で登録されたApple Inc.の商標です。</small>
+    <div class="site-footer__grid">
+      <div class="site-footer__about">
+        <h2 class="site-footer__h">Maison MODIGI</h2>
+        <p>Handcrafted leather for Apple Watch.<br>Stitched by hand in Vietnam, since {{ site.founded }}.</p>
+      </div>
+      <nav aria-label="フッター：製品">
+        <h2 class="site-footer__h">Collection</h2>
+        <ul>{% for l in lines %}<li><a href="/collection/{{ l.slug }}/">{{ l.ja }}</a></li>{% endfor %}</ul>
+      </nav>
+      <nav aria-label="フッター：ブランド">
+        <h2 class="site-footer__h">Maison</h2>
+        <ul>
+          <li><a href="/story/">ブランドストーリー</a></li>
+          <li><a href="/materials/">素材とお手入れ</a></li>
+          <li><a href="/journal/">ジャーナル</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="フッター：サポート">
+        <h2 class="site-footer__h">Support</h2>
+        <ul>
+          <li><a href="/guide/">サイズガイド</a></li>
+          <li><a href="/faq/">よくあるご質問</a></li>
+          <li><a href="/contact/">お問い合わせ</a></li>
+          <li><a href="/privacy/">プライバシーポリシー</a></li>
+          <li><a href="{{ site.amazon }}" target="_blank" rel="noopener">Amazon公式ストア</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="site-footer__base">
+      <small>&copy; {{ site.founded }}–{% year %} MODIGI. All rights reserved.</small>
+      <small>Apple Watchは、米国およびその他の国で登録されたApple Inc.の商標です。</small>
+    </div>
   </div>
 </footer>

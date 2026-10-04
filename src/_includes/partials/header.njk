@@ -8,9 +8,7 @@
       <a href="/collection/"{% if page.url.startsWith('/collection/') %} aria-current="page"{% endif %}>コレクション</a>
       <a href="/materials/"{% if page.url.startsWith('/materials/') %} aria-current="page"{% endif %}>素材</a>
     </nav>
-    <a class="brand" href="/" aria-label="MODIGI ホーム">
-      {% include "partials/emblem.njk" %}<span class="brand__word">MODIGI</span>
-    </a>
+    <a class="brand" href="/" aria-label="MODIGI ホーム"><span class="logo-mark" aria-hidden="true"></span></a>
     <nav class="nav nav--secondary" aria-label="サブメニュー">
       <a href="/story/"{% if page.url.startsWith('/story/') %} aria-current="page"{% endif %}>ストーリー</a>
       <a href="/journal/"{% if page.url.startsWith('/journal/') %} aria-current="page"{% endif %}>ジャーナル</a>

@@ -47,8 +47,8 @@ eleventyComputed:
     </div>
     <div class="pdp__info">
       <p class="eyebrow">{{ line.kana }}</p>
-      <h1 class="display" style="font-size:clamp(32px,4vw,52px)"><span class="latin">{{ line.en }}</span></h1>
-      <p class="h3 muted" style="margin-top:6px">{{ line.ja }}</p>
+      <h1 class="pdp__title">{{ line.en }}</h1>
+      <p class="row__ja" style="margin-bottom:0">{{ line.ja }}</p>
       {% if line.minPrice %}
       <p class="pdp__price">{{ line.minPrice | yen }}{% if line.maxPrice > line.minPrice %} – {{ line.maxPrice | yen }}{% endif %}<small>税込・参考価格</small></p>
       <p class="pdp__note">全{{ line.count }}モデル。最新の価格・在庫はAmazon公式ストアでご確認ください。</p>

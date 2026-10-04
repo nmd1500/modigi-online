@@ -10,7 +10,8 @@ window.addEventListener('scroll', () => {
   ticking = true;
   requestAnimationFrame(() => {
     const y = window.scrollY;
-    header.classList.toggle('is-scrolled', y > 8);
+    const overHero = header.classList.contains('is-over-hero');
+    header.classList.toggle('is-scrolled', overHero ? y > window.innerHeight * 0.55 : y > 8);
     const menuOpen = document.body.classList.contains('menu-open');
     header.classList.toggle('is-hidden', !menuOpen && y > 400 && y > lastY);
     lastY = y;
@@ -66,4 +67,50 @@ if (form) {
     submit.disabled = true;
     submit.textContent = '送信中…';
   });
+}
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Hero slideshow
+const hero = document.querySelector('[data-hero]');
+if (hero) {
+  const slides = [...hero.querySelectorAll('[data-slide]')];
+  const dots = [...hero.querySelectorAll('[data-dot]')];
+  let i = 0;
+  let timer;
+  const show = (n) => {
+    slides[i].classList.remove('is-active');
+    dots[i]?.removeAttribute('aria-current');
+    i = (n + slides.length) % slides.length;
+    const img = slides[i].querySelector('img');
+    if (img?.loading === 'lazy') img.loading = 'eager';
+    slides[i].classList.add('is-active');
+    dots[i]?.setAttribute('aria-current', 'true');
+  };
+  const play = () => { if (!reduceMotion) timer = setInterval(() => show(i + 1), 7000); };
+  dots.forEach((d, n) => d.addEventListener('click', () => { clearInterval(timer); show(n); play(); }));
+  document.addEventListener('visibilitychange', () => { clearInterval(timer); if (!document.hidden) play(); });
+  play();
+}
+
+// Lookbook arrows
+const track = document.querySelector('[data-look-track]');
+document.querySelectorAll('[data-look]').forEach((b) => b.addEventListener('click', () => {
+  const step = track.querySelector('figure').getBoundingClientRect().width + 24;
+  track.scrollBy({ left: step * Number(b.dataset.look), behavior: reduceMotion ? 'auto' : 'smooth' });
+}));
+
+// Parallax band
+const bands = document.querySelectorAll('[data-parallax]');
+if (bands.length && !reduceMotion) {
+  const update = () => {
+    bands.forEach((band) => {
+      const r = band.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      const p = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+      band.querySelector('[data-parallax-media]').style.transform = `translate3d(0, ${(p * -10).toFixed(2)}%, 0)`;
+    });
+  };
+  window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  update();
 }
