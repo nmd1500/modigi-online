@@ -43,12 +43,12 @@ Mỗi lần `git push` lên nhánh `main`, GitHub Actions sẽ build và upload 
 
 **Cài đặt một lần:**
 
-1. hPanel → **Files → FTP Accounts**: ghi lại *FTP IP/hostname*, *username*, đặt *password*.
+1. hPanel → **Tập tin → Tài khoản FTP** → **Tạo tài khoản FTP mới** với thư mục để trống (= `public_html` của website). Không dùng tài khoản FTP chính `u101936128`: tài khoản đó trỏ vào thư mục khác với thư mục web.
 2. GitHub repo → **Settings → Secrets and variables → Actions → New repository secret**, tạo:
    - `FTP_SERVER`: ví dụ `ftp.modigi.online` hoặc IP
    - `FTP_USERNAME`: ví dụ `u123456789.modigi.online`
    - `FTP_PASSWORD`
-   - *(tuỳ chọn)* `FTP_SERVER_DIR`: mặc định `domains/modigi.online/public_html/` (thư mục web của Hostinger khi dùng tài khoản FTP chính)
+   - *(tuỳ chọn)* `FTP_SERVER_DIR`: mặc định `./` (thư mục gốc của tài khoản FTP = `public_html`)
 3. hPanel → **Emails**: tạo hộp thư `noreply@modigi.online` để form liên hệ gửi mail không bị rơi vào spam.
 4. Vào tab **Actions** trên GitHub để xem tiến trình deploy.
 
