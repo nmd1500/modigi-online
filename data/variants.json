@@ -109,20 +109,20 @@
  },
  {
   "line": "swift",
-  "slug": "etoupe",
-  "en": "Étoupe",
-  "ja": "エトープ",
+  "slug": "taupe",
+  "en": "Taupe",
+  "ja": "トープ",
   "sku": "HM_Xam41",
   "asin": "B0BR7H43S7",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-etoupe-1",
-   "swift-etoupe-2",
-   "swift-etoupe-3",
-   "swift-etoupe-4",
-   "swift-etoupe-5",
-   "swift-etoupe-6"
+   "swift-taupe-1",
+   "swift-taupe-2",
+   "swift-taupe-3",
+   "swift-taupe-4",
+   "swift-taupe-5",
+   "swift-taupe-6"
   ]
  },
  {
@@ -145,38 +145,38 @@
  },
  {
   "line": "swift",
-  "slug": "noir-orange",
-  "en": "Noir × Orange",
+  "slug": "black-orange",
+  "en": "Black × Orange",
   "ja": "ブラック × オレンジ",
   "sku": "HM_BL/OR41",
   "asin": "B0BR7H43S7",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-noir-orange-1",
-   "swift-noir-orange-2",
-   "swift-noir-orange-3",
-   "swift-noir-orange-4",
-   "swift-noir-orange-5",
-   "swift-noir-orange-6"
+   "swift-black-orange-1",
+   "swift-black-orange-2",
+   "swift-black-orange-3",
+   "swift-black-orange-4",
+   "swift-black-orange-5",
+   "swift-black-orange-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "vert",
-  "en": "Vert",
+  "slug": "green",
+  "en": "Green",
   "ja": "グリーン",
   "sku": "HM _XANH 40",
   "asin": "B0BR7H43S7",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-vert-1",
-   "swift-vert-2",
-   "swift-vert-3",
-   "swift-vert-4",
-   "swift-vert-5",
-   "swift-vert-6"
+   "swift-green-1",
+   "swift-green-2",
+   "swift-green-3",
+   "swift-green-4",
+   "swift-green-5",
+   "swift-green-6"
   ]
  },
  {
@@ -199,56 +199,56 @@
  },
  {
   "line": "swift",
-  "slug": "rose",
-  "en": "Rose",
+  "slug": "pink",
+  "en": "Pink",
   "ja": "ピンク",
   "sku": "HM_PINK40",
   "asin": "B0BR7H43S7",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-rose-1",
-   "swift-rose-2",
-   "swift-rose-3",
-   "swift-rose-4",
-   "swift-rose-5",
-   "swift-rose-6"
+   "swift-pink-1",
+   "swift-pink-2",
+   "swift-pink-3",
+   "swift-pink-4",
+   "swift-pink-5",
+   "swift-pink-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "noir",
-  "en": "Noir",
+  "slug": "black",
+  "en": "Black",
   "ja": "ブラック",
   "sku": "HM_BL41",
   "asin": "B0BDV351XV",
   "asinShared": false,
   "price": 6990,
   "images": [
-   "swift-noir-1",
-   "swift-noir-2",
-   "swift-noir-3",
-   "swift-noir-4",
-   "swift-noir-5",
-   "swift-noir-6"
+   "swift-black-1",
+   "swift-black-2",
+   "swift-black-3",
+   "swift-black-4",
+   "swift-black-5",
+   "swift-black-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "blanc-noir",
-  "en": "Blanc × Noir",
+  "slug": "white-black",
+  "en": "White × Black",
   "ja": "ホワイト × ブラック",
   "sku": "Trang/den40",
   "asin": "B0BSBBT282",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-blanc-noir-1",
-   "swift-blanc-noir-2",
-   "swift-blanc-noir-3",
-   "swift-blanc-noir-4",
-   "swift-blanc-noir-5",
-   "swift-blanc-noir-6"
+   "swift-white-black-1",
+   "swift-white-black-2",
+   "swift-white-black-3",
+   "swift-white-black-4",
+   "swift-white-black-5",
+   "swift-white-black-6"
   ]
  },
  {
@@ -271,92 +271,92 @@
  },
  {
   "line": "swift",
-  "slug": "orange-blanc",
-  "en": "Orange × Blanc",
+  "slug": "orange-white",
+  "en": "Orange × White",
   "ja": "オレンジ × ホワイト",
   "sku": "OR/WH40",
   "asin": "B0BSBBT282",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-orange-blanc-1",
-   "swift-orange-blanc-2",
-   "swift-orange-blanc-3",
-   "swift-orange-blanc-4",
-   "swift-orange-blanc-5",
-   "swift-orange-blanc-6"
+   "swift-orange-white-1",
+   "swift-orange-white-2",
+   "swift-orange-white-3",
+   "swift-orange-white-4",
+   "swift-orange-white-5",
+   "swift-orange-white-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "noir-orange-stitch",
-  "en": "Noir Orange Stitch",
+  "slug": "black-orange-stitch",
+  "en": "Black Orange Stitch",
   "ja": "ブラック（オレンジステッチ）",
   "sku": "BLchicam40",
   "asin": "B0BSBBT282",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-noir-orange-stitch-1",
-   "swift-noir-orange-stitch-2",
-   "swift-noir-orange-stitch-3",
-   "swift-noir-orange-stitch-4",
-   "swift-noir-orange-stitch-5",
-   "swift-noir-orange-stitch-6"
+   "swift-black-orange-stitch-1",
+   "swift-black-orange-stitch-2",
+   "swift-black-orange-stitch-3",
+   "swift-black-orange-stitch-4",
+   "swift-black-orange-stitch-5",
+   "swift-black-orange-stitch-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "noir-jaune",
-  "en": "Noir × Jaune",
+  "slug": "black-yellow",
+  "en": "Black × Yellow",
   "ja": "ブラック × イエロー",
   "sku": "Denvang40",
   "asin": "B0CNQWQXLJ",
   "asinShared": false,
   "price": 6990,
   "images": [
-   "swift-noir-jaune-1",
-   "swift-noir-jaune-2",
-   "swift-noir-jaune-3",
-   "swift-noir-jaune-4",
-   "swift-noir-jaune-5",
-   "swift-noir-jaune-6"
+   "swift-black-yellow-1",
+   "swift-black-yellow-2",
+   "swift-black-yellow-3",
+   "swift-black-yellow-4",
+   "swift-black-yellow-5",
+   "swift-black-yellow-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "noir-bleu",
-  "en": "Noir × Bleu",
+  "slug": "black-blue",
+  "en": "Black × Blue",
   "ja": "ブラック × ブルー",
   "sku": "denxanh40",
   "asin": "B0CHDGW7NL",
   "asinShared": false,
   "price": 6990,
   "images": [
-   "swift-noir-bleu-1",
-   "swift-noir-bleu-2",
-   "swift-noir-bleu-3",
-   "swift-noir-bleu-4",
-   "swift-noir-bleu-5",
-   "swift-noir-bleu-6"
+   "swift-black-blue-1",
+   "swift-black-blue-2",
+   "swift-black-blue-3",
+   "swift-black-blue-4",
+   "swift-black-blue-5",
+   "swift-black-blue-6"
   ]
  },
  {
   "line": "swift",
-  "slug": "noir-blanc",
-  "en": "Noir × Blanc",
+  "slug": "black-white",
+  "en": "Black × White",
   "ja": "ブラック × ホワイト",
   "sku": "BL/WH40",
   "asin": "B0BSBBT282",
   "asinShared": true,
   "price": 6990,
   "images": [
-   "swift-noir-blanc-1",
-   "swift-noir-blanc-2",
-   "swift-noir-blanc-3",
-   "swift-noir-blanc-4",
-   "swift-noir-blanc-5",
-   "swift-noir-blanc-6"
+   "swift-black-white-1",
+   "swift-black-white-2",
+   "swift-black-white-3",
+   "swift-black-white-4",
+   "swift-black-white-5",
+   "swift-black-white-6"
   ]
  },
  {
@@ -415,20 +415,20 @@
  },
  {
   "line": "epsom",
-  "slug": "rose-sakura",
-  "en": "Rose Sakura",
-  "ja": "ローズサクラ",
+  "slug": "sakura-pink",
+  "en": "Sakura Pink",
+  "ja": "サクラピンク",
   "sku": "HM EP Hong40",
   "asin": null,
   "asinShared": true,
   "price": null,
   "images": [
-   "epsom-rose-sakura-1",
-   "epsom-rose-sakura-2",
-   "epsom-rose-sakura-3",
-   "epsom-rose-sakura-4",
-   "epsom-rose-sakura-5",
-   "epsom-rose-sakura-6"
+   "epsom-sakura-pink-1",
+   "epsom-sakura-pink-2",
+   "epsom-sakura-pink-3",
+   "epsom-sakura-pink-4",
+   "epsom-sakura-pink-5",
+   "epsom-sakura-pink-6"
   ]
  },
  {
@@ -451,56 +451,56 @@
  },
  {
   "line": "epsom",
-  "slug": "etoupe",
-  "en": "Étoupe",
-  "ja": "エトープ",
+  "slug": "taupe",
+  "en": "Taupe",
+  "ja": "トープ",
   "sku": "BR＿EP＿44",
   "asin": "B0B2S7F6TR",
   "asinShared": false,
   "price": 6990,
   "images": [
-   "epsom-etoupe-1",
-   "epsom-etoupe-2",
-   "epsom-etoupe-3",
-   "epsom-etoupe-4",
-   "epsom-etoupe-5",
-   "epsom-etoupe-6"
+   "epsom-taupe-1",
+   "epsom-taupe-2",
+   "epsom-taupe-3",
+   "epsom-taupe-4",
+   "epsom-taupe-5",
+   "epsom-taupe-6"
   ]
  },
  {
   "line": "epsom",
-  "slug": "noir",
-  "en": "Noir",
+  "slug": "black",
+  "en": "Black",
   "ja": "ブラック",
   "sku": "BL＿EP＿44",
   "asin": "B0B2S7WGYP",
   "asinShared": false,
   "price": 6990,
   "images": [
-   "epsom-noir-1",
-   "epsom-noir-2",
-   "epsom-noir-3",
-   "epsom-noir-4",
-   "epsom-noir-5",
-   "epsom-noir-6"
+   "epsom-black-1",
+   "epsom-black-2",
+   "epsom-black-3",
+   "epsom-black-4",
+   "epsom-black-5",
+   "epsom-black-6"
   ]
  },
  {
   "line": "essential",
-  "slug": "noir",
-  "en": "Noir",
+  "slug": "black",
+  "en": "Black",
   "ja": "ブラック",
   "sku": "MDG_BL44",
   "asin": "B09TVC71L4",
   "asinShared": false,
   "price": 2390,
   "images": [
-   "essential-noir-1",
-   "essential-noir-2",
-   "essential-noir-3",
-   "essential-noir-4",
-   "essential-noir-5",
-   "essential-noir-6"
+   "essential-black-1",
+   "essential-black-2",
+   "essential-black-3",
+   "essential-black-4",
+   "essential-black-5",
+   "essential-black-6"
   ]
  },
  {
@@ -541,20 +541,20 @@
  },
  {
   "line": "essential",
-  "slug": "rouge",
-  "en": "Rouge",
+  "slug": "red",
+  "en": "Red",
   "ja": "レッド",
   "sku": "MDG_RED44",
   "asin": "B0FT2GMF5R",
   "asinShared": false,
   "price": 2390,
   "images": [
-   "essential-rouge-1",
-   "essential-rouge-2",
-   "essential-rouge-3",
-   "essential-rouge-4",
-   "essential-rouge-5",
-   "essential-rouge-6"
+   "essential-red-1",
+   "essential-red-2",
+   "essential-red-3",
+   "essential-red-4",
+   "essential-red-5",
+   "essential-red-6"
   ]
  }
 ]

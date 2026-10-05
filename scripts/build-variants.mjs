@@ -13,17 +13,17 @@ const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 
 // Tên màu hiển thị (EN / JA) theo màu trong listing
 const COLOR_NAMES = {
-  'ブラウン': ['Brown', 'ブラウン'], 'エトゥープ': ['Étoupe', 'エトープ'], 'オレンジ': ['Orange', 'オレンジ'],
-  'オレンジーブラック': ['Noir × Orange', 'ブラック × オレンジ'], 'グリーン': ['Vert', 'グリーン'], 'ネイビー': ['Navy', 'ネイビー'],
-  'ピンク': ['Rose', 'ピンク'], 'ブラック': ['Noir', 'ブラック'], 'ホワイト/ブラック': ['Blanc × Noir', 'ホワイト × ブラック'],
-  'Orange/MintBlue': ['Orange × Mint', 'オレンジ × ミント'], 'オレンジ/ホワイト': ['Orange × Blanc', 'オレンジ × ホワイト'],
-  'ブラック/イエロー': ['Noir × Jaune', 'ブラック × イエロー'], 'ブラック/ブルー': ['Noir × Bleu', 'ブラック × ブルー'],
-  'ブラック/ホワイト': ['Noir × Blanc', 'ブラック × ホワイト'],
+  'ブラウン': ['Brown', 'ブラウン'], 'エトゥープ': ['Taupe', 'トープ'], 'オレンジ': ['Orange', 'オレンジ'],
+  'オレンジーブラック': ['Black × Orange', 'ブラック × オレンジ'], 'グリーン': ['Green', 'グリーン'], 'ネイビー': ['Navy', 'ネイビー'],
+  'ピンク': ['Pink', 'ピンク'], 'ブラック': ['Black', 'ブラック'], 'ホワイト/ブラック': ['White × Black', 'ホワイト × ブラック'],
+  'Orange/MintBlue': ['Orange × Mint', 'オレンジ × ミント'], 'オレンジ/ホワイト': ['Orange × White', 'オレンジ × ホワイト'],
+  'ブラック/イエロー': ['Black × Yellow', 'ブラック × イエロー'], 'ブラック/ブルー': ['Black × Blue', 'ブラック × ブルー'],
+  'ブラック/ホワイト': ['Black × White', 'ブラック × ホワイト'],
   'Royal Blue': ['Royal Blue', 'ロイヤルブルー'], 'Golden Brown': ['Golden Brown', 'ゴールデンブラウン'],
-  'Pearl Grey': ['Pearl Grey', 'パールグレー'], 'Rose Sakura': ['Rose Sakura', 'ローズサクラ'],
+  'Pearl Grey': ['Pearl Grey', 'パールグレー'], 'Rose Sakura': ['Sakura Pink', 'サクラピンク'],
 };
 // SKU đặc biệt: cùng màu "ブラック" nhưng chỉ cam (chicam)
-const SKU_OVERRIDE = { BLchicam: ['Noir Orange Stitch', 'ブラック（オレンジステッチ）'] };
+const SKU_OVERRIDE = { BLchicam: ['Black Orange Stitch', 'ブラック（オレンジステッチ）'] };
 
 const slugify = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const skuBase = (sku) => sku.replace(/\s/g, '').replace(/_?\d{2}$/, '').toLowerCase();
@@ -73,8 +73,8 @@ for (const v of variants.values()) {
 // 3) Các dòng chỉ có ASIN (Croco, Epsom cũ, Standard) → lấy ảnh từ trang sản phẩm Amazon
 const ASIN_ONLY = {
   crocodile: { 'Cognac Camel44': ['Cognac Camel', 'コニャックキャメル'], 'Onyx Black44': ['Onyx Black', 'オニキスブラック'], 'Espresso Brown44': ['Espresso Brown', 'エスプレッソブラウン'], 'Midnight Navy44': ['Midnight Navy', 'ミッドナイトネイビー'], 'Royal Blue44': ['Royal Blue', 'ロイヤルブルー'] },
-  epsom: { 'OR＿EP＿44': ['Orange', 'オレンジ'], 'BR＿EP＿44': ['Étoupe', 'エトープ'], 'BL＿EP＿44': ['Noir', 'ブラック'] },
-  essential: { MDG_BL44: ['Noir', 'ブラック'], MDG_OR44: ['Orange', 'オレンジ'], MDG_NE44: ['Navy', 'ネイビー'], MDG_RED44: ['Rouge', 'レッド'] },
+  epsom: { 'OR＿EP＿44': ['Orange', 'オレンジ'], 'BR＿EP＿44': ['Taupe', 'トープ'], 'BL＿EP＿44': ['Black', 'ブラック'] },
+  essential: { MDG_BL44: ['Black', 'ブラック'], MDG_OR44: ['Orange', 'オレンジ'], MDG_NE44: ['Navy', 'ネイビー'], MDG_RED44: ['Red', 'レッド'] },
 };
 const prices = {};
 async function fetchAsin(asin) {
