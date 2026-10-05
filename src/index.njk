@@ -226,4 +226,25 @@ cards:
 </section>
 {% endif %}
 
+<section class="section sns" id="sns">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <h2 class="title-caps">MODIGI in SNS</h2>
+      <p class="h2" style="margin-top:16px">工房の日常を、毎日発信中。</p>
+      <p class="lead">新作カラー、職人の手仕事、着用イメージ。MODIGIの「いま」をSNSでお届けしています。</p>
+    </div>
+    <div class="sns__grid">
+      {%- for s in site.sns %}
+      <a class="sns-card sns-card--{{ s.id }} reveal" style="--d:{{ loop.index0 * 0.08 }}s" href="{{ s.url }}" target="_blank" rel="noopener">
+        <span class="sns-card__icon">{% include "partials/sns-icon.njk" %}</span>
+        <span class="sns-card__name">{{ s.name }}</span>
+        <span class="sns-card__handle">{{ s.handle }}</span>
+        <span class="sns-card__text">{{ s.ja }}</span>
+        <span class="sns-card__cta">{% if s.id == 'youtube' %}チャンネル登録{% else %}フォローする{% endif %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
 {% include "partials/cta.njk" %}

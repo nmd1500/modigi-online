@@ -35,7 +35,7 @@
     "logo": site.url + "/favicon.svg",
     "foundingDate": site.founded | string,
     "email": site.email,
-    "sameAs": [site.amazon]
+    "sameAs": [site.amazon, site.sns[0].url, site.sns[1].url, site.sns[2].url]
   } | json | safe }}</script>
   {% block head %}{% endblock %}
 </head>

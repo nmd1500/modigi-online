@@ -782,3 +782,24 @@ body.menu-open .navbar { background: #15110e; }
   .step { scroll-snap-align: start; }
 }
 .band .container { text-align: center; }
+
+/* MODIGI in SNS */
+.sns__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); }
+.sns-card {
+  position: relative; display: flex; flex-direction: column; gap: 10px; padding: clamp(32px, 3vw, 48px);
+  background: rgba(20, 16, 13, .85); border: 1px solid var(--line); overflow: hidden; isolation: isolate;
+  transition: transform .6s var(--ease), border-color .4s, box-shadow .6s;
+}
+.sns-card::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .6s; background: radial-gradient(circle at 100% 0%, rgba(201,163,93,.22), transparent 60%); }
+.sns-card:hover { transform: translateY(-6px); border-color: rgba(201,163,93,.6); box-shadow: 0 30px 50px -30px rgba(0,0,0,.9); }
+.sns-card:hover::before { opacity: 1; }
+.sns-card__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--gold-grad); color: #1a1410; margin-bottom: 14px; }
+.sns-card__icon svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.sns-card__name { font-family: var(--f-ui); font-weight: 600; font-size: 22px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); }
+.sns-card__handle { font-family: var(--f-ui); font-size: 16px; letter-spacing: .06em; color: var(--gold-light); }
+.sns-card__text { margin-top: 6px; font-size: var(--fs-small); line-height: 1.9; color: var(--ink-3); }
+.sns-card__cta { display: inline-flex; align-items: center; gap: 10px; margin-top: auto; padding-top: 22px; font-family: var(--f-ui); font-weight: 600; font-size: 14px; letter-spacing: .14em; color: var(--gold-light); }
+.sns-card__cta svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; transition: transform .5s var(--ease); }
+.sns-card:hover .sns-card__cta svg { transform: translate(3px, -3px); }
+@media (max-width: 960px) { .sns__grid { grid-template-columns: 1fr; } }
+.site-footer__social { gap: 12px; }

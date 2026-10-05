@@ -16,6 +16,7 @@ description: MODIGIへのお問い合わせはこちらから。商品・サイ�
       <p class="lead" style="margin-top:28px">商品やサイズ選び、ご注文、法人・卸のご相談など、お気軽にお問い合わせください。通常2営業日以内にご返信いたします。</p>
       <dl>
         <dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+        <dt>SNS</dt><dd>{% for s in site.sns %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a>{% if not loop.last %} ／ {% endif %}{% endfor %}</dd>
         <dt>Online Store</dt><dd><a href="{{ site.amazon }}" target="_blank" rel="noopener">Amazon公式ストア</a></dd>
         <dt>Before you ask</dt><dd><a href="/faq/" class="link-arrow">よくあるご質問</a></dd>
       </dl>
