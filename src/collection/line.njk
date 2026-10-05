@@ -62,7 +62,7 @@ eleventyComputed:
         <div><dt>対応モデル</dt><dd>Series 4〜11 / SE / Ultra 1〜3</dd></div>
       </dl>
 
-      <a class="btn btn--block" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="line-{{ line.slug }}">Amazonで購入する</a>
+      <a class="btn btn--gold btn--block" href="#colors">カラーを選ぶ（全{{ line.colorVariants.length }}色）</a>
       <p style="margin-top:16px;text-align:center"><a class="link-arrow" href="/guide/">サイズの選び方</a></p>
 
       <ul class="assurances">
@@ -71,6 +71,13 @@ eleventyComputed:
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke-linecap="round" stroke-linejoin="round"/></svg>工具不要・ワンタッチで付け替え</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="section section--panel section--tight" id="colors">
+  <div class="container">
+    <div class="heading-row reveal"><h2 class="title-caps">Colors — 全{{ line.colorVariants.length }}色</h2><span class="muted" style="font-size:15px">色をクリックすると詳細ページへ</span></div>
+    {% set colors = line.colorVariants %}{% include "partials/color-cards.njk" %}
   </div>
 </section>
 

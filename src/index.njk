@@ -9,14 +9,14 @@ heroSlides:
   - img: gift-box
     alt: リボンをかけたMODIGIのギフトボックス
 cards:
-  - { img: croco-buckle, en: Crocodile Noir, ja: 腹部クロコダイル・手縫い仕上げ, line: crocodile }
-  - { img: swift-black, en: Swift Noir, ja: フランス産カーフ・定番の黒, line: swift }
-  - { img: swift-colors, en: Swift Couleurs, ja: 全7色から選べるカーフレザー, line: swift }
-  - { img: epsom-etoupe, en: Epsom Étoupe, ja: 型押しカーフ・オレンジステッチ, line: epsom }
-  - { img: epsom-noir, en: Epsom Noir, ja: ノワール × オレンジのコントラスト, line: epsom }
-  - { img: epsom-orange, en: Epsom Orange, ja: 鮮やかな発色の型押しカーフ, line: epsom }
-  - { img: swift-buckle, en: Swift Classic, ja: シャープなステッチとバックル, line: swift }
-  - { img: swift-boxed, en: Essential Noir, ja: 毎日に寄り添うスタンダード, line: essential }
+  - crocodile/onyx-black
+  - crocodile/cognac-camel
+  - swift/noir
+  - swift/orange-mint
+  - epsom/etoupe
+  - epsom/golden-brown
+  - swift/noir-orange
+  - essential/noir
 ---
 <section class="hero" data-hero>
   <div class="container">
@@ -53,14 +53,15 @@ cards:
       <a class="link-arrow" href="/collection/">すべて見る</a>
     </div>
     <div class="cards">
-      {%- for c in cards %}
+      {%- for key in cards %}
+      {%- set c = variants | variantBy(key) %}
       {%- set ln = lines | lineBy(c.line) %}
-      <a class="card reveal" style="--d:{{ (loop.index0 % 4) * 0.06 }}s" href="/collection/{{ c.line }}/">
-        <div class="card__img">{% img c.img, c.en + " — " + c.ja, "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 100vw" %}</div>
+      <a class="card reveal" style="--d:{{ (loop.index0 % 4) * 0.06 }}s" href="{{ c.url }}">
+        <div class="card__img">{% img "v/" + c.images[0], ln.ja + " " + c.ja, "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 100vw" %}</div>
         <div class="card__body">
-          <h3 class="card__title">{{ c.en }}</h3>
-          <p class="card__desc">{{ c.ja }}</p>
-          {% if ln.minPrice %}<p class="card__price">{{ ln.minPrice | yen }}<small>〜</small></p>{% endif %}
+          <h3 class="card__title">{{ ln.en }} {{ c.en }}</h3>
+          <p class="card__desc">{{ ln.ja }} ／ {{ c.ja }}</p>
+          {% if c.price %}<p class="card__price">{{ c.price | yen }}</p>{% endif %}
         </div>
       </a>
       {%- endfor %}

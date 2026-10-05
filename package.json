@@ -6,13 +6,15 @@
     "dev": "eleventy --serve",
     "build": "eleventy",
     "sync": "node scripts/sync-products.mjs",
-    "images": "node scripts/import-images.mjs"
+    "images": "node scripts/import-images.mjs",
+    "variants": "node scripts/build-variants.mjs"
   },
   "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "csv-parse": "^7.0.3",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "xlsx": "^0.18.5"
   },
   "private": true,
   "engines": {

@@ -24,6 +24,7 @@ export default function (eleventyConfig) {
     new Date(d).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Tokyo' }),
   );
   eleventyConfig.addFilter('isoDate', (d) => new Date(d).toISOString().slice(0, 10));
+  eleventyConfig.addFilter('variantBy', (vs, key) => vs.find((v) => `${v.line}/${v.slug}` === key) || null);
   eleventyConfig.addFilter('lineBy', (lines, slug) => lines.find((l) => l.slug === slug) || {});
   eleventyConfig.addFilter('head', (arr, n) => (arr || []).slice(0, n));
   eleventyConfig.addFilter('faqSchema', (groups) =>

@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: variants
+  size: 1
+  alias: v
+  addAllPagesToCollections: true
+permalink: "/collection/{{ v.line }}/{{ v.slug }}/"
+eleventyComputed:
+  title: "{{ (lines | lineBy(v.line)).ja }} {{ v.ja }}（{{ v.en }}）Apple Watch 本革バンド"
+  description: "MODIGI {{ (lines | lineBy(v.line)).ja }}「{{ v.ja }}」。職人の手縫いで仕立てたApple Watch用本革バンド。38〜49mmの全サイズに対応。"
+  ogImage: "v/{{ v.images[0] }}"
+---
+{%- set line = lines | lineBy(v.line) %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "MODIGI " + line.en + " " + v.en + " Apple Watch レザーバンド",
+  "color": v.ja,
+  "sku": v.sku,
+  "brand": { "@type": "Brand", "name": "MODIGI" },
+  "image": site.url + "/assets/img/v/" + v.images[0] + "-1200.webp",
+  "url": site.url + page.url,
+  "offers": { "@type": "Offer", "priceCurrency": "JPY", "price": v.price or line.minPrice, "url": v.buyUrl or site.amazon, "availability": "https://schema.org/InStock" }
+} | json | safe }}</script>
+
+<section class="page-hero" style="padding-bottom:clamp(28px,3vw,44px)">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li><a href="/collection/">コレクション</a></li><li><a href="/collection/{{ line.slug }}/">{{ line.ja }}</a></li><li>{{ v.ja }}</li></ol>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container pdp">
+    <div class="gallery-v" data-gallery>
+      <figure class="gallery-v__main">{% img "v/" + v.images[0], line.ja + " " + v.ja + " のApple Watchレザーバンド", "(min-width: 960px) 55vw, 100vw", "eager" %}</figure>
+      <div class="gallery-v__thumbs" role="group" aria-label="画像を選択">
+        {%- for im in v.images %}
+        <button type="button" class="gallery-v__thumb" data-src="/assets/img/v/{{ im }}-1200.webp" aria-label="画像 {{ loop.index }}"{% if loop.first %} aria-current="true"{% endif %}>{% img "v/" + im, "", "120px" %}</button>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="pdp__info">
+      <p class="eyebrow">{{ line.en }} · {{ line.kana }}</p>
+      <h1 class="pdp__title">{{ v.en }}</h1>
+      <p class="row__ja" style="margin-bottom:0">{{ line.ja }} ／ {{ v.ja }}</p>
+      <p class="pdp__price">{{ (v.price or line.minPrice) | yen }}<small>税込・Amazon参考価格</small></p>
+
+      {%- if line.colorVariants.length > 1 %}
+      <div class="swatches">
+        <p class="swatches__label">カラー：<strong>{{ v.ja }}</strong></p>
+        <div class="swatches__list">
+          {%- for c in line.colorVariants %}
+          <a class="swatch" href="{{ c.url }}" title="{{ c.ja }}"{% if c.slug == v.slug %} aria-current="true"{% endif %}>{% img "v/" + c.images[0], c.ja, "72px" %}</a>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endif %}
+
+      <dl class="spec">
+        {%- for s in line.specs %}<div><dt>{{ s[0] }}</dt><dd>{{ s[1] }}</dd></div>{% endfor %}
+        <div><dt>対応サイズ</dt><dd><div class="chips"><span class="chip">38 / 40 / 41 / 42mm</span><span class="chip">44 / 45 / 46 / 49mm</span></div></dd></div>
+        <div><dt>対応モデル</dt><dd>Series 4〜11 / SE / Ultra 1〜3</dd></div>
+      </dl>
+
+      <a class="btn btn--gold btn--block" href="{{ v.buyUrl or site.amazon }}" target="_blank" rel="noopener" data-amazon="variant-{{ v.line }}-{{ v.slug }}">Amazonで購入する</a>
+      {%- if v.asinShared or not v.asin %}
+      <p class="pdp__note" style="margin-top:12px">Amazonのページで、カラー「{{ v.ja }}」とサイズをお選びください。</p>
+      {%- endif %}
+      <p style="margin-top:16px;text-align:center"><a class="link-arrow" href="/guide/">サイズの選び方</a></p>
+
+      <ul class="assurances">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M12 4v16" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>職人による一本ずつの手縫い仕上げ</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="1"/><path d="M3 12h18M12 8v12M8 8c-2-3 2-5 4 0 2-5 6-3 4 0"/></svg>オリジナルギフトボックス入り</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke-linecap="round" stroke-linejoin="round"/></svg>工具不要・ワンタッチで付け替え</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--panel section--tight">
+  <div class="container">
+    <div class="heading-row reveal"><h2 class="title-caps">{{ line.en }} — All Colors</h2><a class="link-arrow" href="/collection/{{ line.slug }}/">{{ line.ja }}について</a></div>
+    {% set colors = line.colorVariants %}{% include "partials/color-cards.njk" %}
+  </div>
+</section>
+{% include "partials/cta.njk" %}

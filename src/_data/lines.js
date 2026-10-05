@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 
 const products = JSON.parse(fs.readFileSync('data/products.json', 'utf8'));
+const variants = JSON.parse(fs.readFileSync('data/variants.json', 'utf8'));
 
 const defs = [
   {
@@ -108,7 +109,16 @@ function stats(items) {
 // Barenia (ít mẫu) gộp vào Swift để trang không bị mỏng
 const groupOf = (p) => (p.line === 'barenia' ? 'swift' : p.line);
 
-export default defs.map((d) => ({
-  ...d,
-  ...stats(products.filter((p) => groupOf(p) === d.slug)),
-}));
+export default defs.map((d) => {
+  const colors = variants.filter((v) => v.line === d.slug).map((v) => ({ ...v, url: `/collection/${v.line}/${v.slug}/` }));
+  const base = { ...d, ...stats(products.filter((p) => groupOf(p) === d.slug)), colorVariants: colors };
+  // Giá & ảnh theo listing Amazon (ưu tiên hơn dữ liệu Mercari)
+  const amazonPrices = colors.map((c) => c.price).filter(Boolean);
+  if (amazonPrices.length) { base.minPrice = Math.min(...amazonPrices); base.maxPrice = Math.max(...amazonPrices); }
+  if (colors.length) {
+    base.hero = `v/${colors[0].images[0]}`;
+    base.gallery = colors.slice(1, 3).map((c) => `v/${c.images[0]}`);
+    base.count = colors.length;
+  }
+  return base;
+});

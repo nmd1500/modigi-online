@@ -112,3 +112,14 @@ if (bands.length && !reduceMotion) {
   window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
   update();
 }
+
+// Variant gallery thumbnails
+document.querySelectorAll('[data-gallery]').forEach((g) => {
+  const main = g.querySelector('.gallery-v__main img');
+  g.querySelectorAll('.gallery-v__thumb').forEach((t) => t.addEventListener('click', () => {
+    main.removeAttribute('srcset');
+    main.src = t.dataset.src;
+    g.querySelectorAll('.gallery-v__thumb').forEach((x) => x.removeAttribute('aria-current'));
+    t.setAttribute('aria-current', 'true');
+  }));
+});

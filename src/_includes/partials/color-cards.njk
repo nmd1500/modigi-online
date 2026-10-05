@@ -1,0 +1,12 @@
+<div class="cards">
+  {%- for c in colors %}
+  <a class="card reveal" style="--d:{{ (loop.index0 % 4) * 0.05 }}s" href="{{ c.url }}">
+    <div class="card__img">{% img "v/" + c.images[0], c.ja + " のApple Watchレザーバンド", "(min-width: 1100px) 25vw, 50vw" %}</div>
+    <div class="card__body">
+      <h3 class="card__title">{{ c.en }}</h3>
+      <p class="card__desc">{{ c.ja }}</p>
+      {% if c.price %}<p class="card__price">{{ c.price | yen }}</p>{% endif %}
+    </div>
+  </a>
+  {%- endfor %}
+</div>
