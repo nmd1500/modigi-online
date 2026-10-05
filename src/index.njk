@@ -4,10 +4,10 @@ preloadHero: hero-wrist
 heroSlides:
   - img: hero-wrist
     alt: 木のテーブルの上、MODIGIの黒い本革バンドを着けたApple Watchとコーヒー
+  - img: atelier-lineup
+    alt: 工房の作業台に並ぶ、手縫いを終えたカラフルなレザーバンド
   - img: croco-life
     alt: クロコダイルレザーバンドを着けて手帳に書き込む手元
-  - img: gift-box
-    alt: リボンをかけたMODIGIのギフトボックス
 cards:
   - crocodile/onyx-black
   - crocodile/cognac-camel
@@ -80,11 +80,51 @@ cards:
 </section>
 
 <section class="band" data-parallax>
-  <div class="band__media" data-parallax-media>{% img "craft-stitch", "", "100vw" %}</div>
+  <div class="band__media" data-parallax-media>{% img "atelier-stitching", "職人が木製のクランプにレザーを挟み、二本の針で手縫いする様子", "100vw" %}</div>
   <blockquote class="reveal" style="margin:0">
     <p class="band__eyebrow">Hand-stitched in Vietnam</p>
     <p class="band__quote">一針ずつ、想いを縫い込む。</p>
   </blockquote>
+</section>
+
+<section class="section atelier">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <h2 class="title-caps">The Atelier</h2>
+      <p class="h2" style="margin-top:16px">一本が仕上がるまで。</p>
+      <p class="lead">ベトナムの工房で、職人がひとつずつ。機械任せにしない四つの工程が、MODIGIの品質をつくります。</p>
+    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <div class="step__img">{% img "atelier-cutting", "職人が一枚革に包丁を入れ、パーツを裁断する様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">01</span>
+        <h3 class="step__title">Select &amp; Cut</h3>
+        <p class="step__ja">革を選び、裁つ</p>
+        <p class="step__text">一枚革の表情を見極め、キズのない部位だけを選んで手作業で裁断します。</p>
+      </li>
+      <li class="step reveal" style="--d:.08s">
+        <div class="step__img">{% img "atelier-pricking", "菱目打ちを木槌で打ち、縫い穴をあける様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">02</span>
+        <h3 class="step__title">Pricking</h3>
+        <p class="step__ja">菱目を打つ</p>
+        <p class="step__text">菱目打ちを木槌で一打ずつ。等間隔の縫い穴が、美しいステッチの土台になります。</p>
+      </li>
+      <li class="step reveal" style="--d:.16s">
+        <div class="step__img">{% img "atelier-stitching", "木製クランプに革を挟み、二本の針で手縫いする様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">03</span>
+        <h3 class="step__title">Hand-stitching</h3>
+        <p class="step__ja">一針ずつ縫う</p>
+        <p class="step__text">二本の針で交互に縫い上げるサドルステッチ。ほつれにくく、長く使える仕立てです。</p>
+      </li>
+      <li class="step reveal" style="--d:.24s">
+        <div class="step__img">{% img "atelier-crease", "熱したネン引きでレザーの縁に線を入れる様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">04</span>
+        <h3 class="step__title">Edge Finishing</h3>
+        <p class="step__ja">コバを仕上げる</p>
+        <p class="step__text">熱したコテで縁を引き締め、何度も磨いて、なめらかで艶のあるコバに仕上げます。</p>
+      </li>
+    </ol>
+  </div>
 </section>
 
 <section class="section">
@@ -124,7 +164,7 @@ cards:
 
 <section class="section section--panel">
   <div class="container split">
-    <div class="split__media split__media--tall reveal-img">{% img "croco-life", "クロコダイルレザーバンドを着けて手帳に書き込む手元", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div class="split__media split__media--tall reveal-img">{% img "atelier-finish", "工房の作業台で、コバ仕上げを待つ色とりどりのレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
     <div>
       <h2 class="title-caps reveal">Since {{ site.founded }}</h2>
       <p class="h2 reveal" style="margin-top:20px">ベトナムの工房から、<br>あなたの手首へ。</p>

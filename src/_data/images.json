@@ -119,6 +119,62 @@
     ],
     "ratio": 1
   },
+  "atelier-cutting": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.7778
+  },
+  "atelier-pricking": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.4993
+  },
+  "atelier-stitching": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.4993
+  },
+  "atelier-crease": {
+    "widths": [
+      640,
+      1200,
+      1334
+    ],
+    "ratio": 0.667
+  },
+  "atelier-finish": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.4993
+  },
+  "atelier-lineup": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.4993
+  },
+  "atelier-sorting": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.7778
+  },
   "v/crocodile-cognac-camel-1": {
     "widths": [
       640,

@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: ブランドストーリー
 description: 2015年、ベトナムの工房から生まれたMODIGI。職人の手仕事と選び抜いた本革で、Apple Watchのための上質なレザーバンドを仕立てています。
 permalink: /story/
-ogImage: craft-stitch
+ogImage: atelier-lineup
 ---
 <section class="page-hero">
   <div class="container">
@@ -15,7 +15,7 @@ ogImage: craft-stitch
 
 <section class="section" style="padding-top:0">
   <div class="container split">
-    <div class="split__media split__media--tall reveal-img">{% img "craft-stitch", "職人が革を手縫いする手元", "(min-width: 960px) 50vw, 100vw", "eager" %}</div>
+    <div class="split__media split__media--tall reveal-img">{% img "atelier-crease", "熱したネン引きでレザーの縁を仕上げる職人の手元", "(min-width: 960px) 50vw, 100vw", "eager" %}</div>
     <div class="prose">
       <p class="eyebrow reveal">Chapter I</p>
       <h2 class="h2 reveal">ベトナムの手仕事に、魅せられて。</h2>
@@ -25,11 +25,12 @@ ogImage: craft-stitch
   </div>
 </section>
 
-<section class="section section--night">
-  <div class="container container--narrow" style="text-align:center">
-    <p class="eyebrow reveal" style="justify-content:center">Philosophy</p>
-    <p class="display reveal" style="font-size:clamp(24px,3.2vw,40px);line-height:1.9">ベトナムの職人技で、<br>世界にひとつの表情を。</p>
-    <p class="lead reveal" style="margin:32px auto 0">同じ型紙、同じ革でも、職人の手で仕立てたものはひとつとして同じにはなりません。わずかな革目の違い、ステッチの陰影。それこそが、量産品にはない手仕事の価値だと、私たちは考えています。</p>
+<section class="band" data-parallax>
+  <div class="band__media" data-parallax-media>{% img "atelier-sorting", "工房で色ごとに仕分けられたレザーのパーツ", "100vw" %}</div>
+  <div class="container container--narrow reveal">
+    <p class="band__eyebrow">Philosophy</p>
+    <p class="band__quote">ベトナムの職人技で、<br>世界にひとつの表情を。</p>
+    <p class="lead" style="margin:28px auto 0;color:var(--on-night-2)">同じ型紙、同じ革でも、職人の手で仕立てたものはひとつとして同じにはなりません。わずかな革目の違い、ステッチの陰影。それこそが、量産品にはない手仕事の価値だと、私たちは考えています。</p>
   </div>
 </section>
 
@@ -39,18 +40,42 @@ ogImage: craft-stitch
       <p class="eyebrow">Process</p>
       <h2 class="h2">一本が仕上がるまで。</h2>
     </div>
-    <div class="pillars" style="grid-template-columns:repeat(4,1fr)">
-      <div class="pillar reveal"><span class="pillar__num">01</span><h3 class="h3">革を選ぶ</h3><p>キズや色ムラを一枚ずつ確かめ、バンドに最適な部位だけを選び取ります。</p></div>
-      <div class="pillar reveal" style="--d:.08s"><span class="pillar__num">02</span><h3 class="h3">裁断する</h3><p>革の繊維の向きを読みながら、表革と裏革を正確に切り出します。</p></div>
-      <div class="pillar reveal" style="--d:.16s"><span class="pillar__num">03</span><h3 class="h3">手で縫う</h3><p>菱目打ちで穴をあけ、二本の針で一針ずつ。ほつれにくいサドルステッチで縫い上げます。</p></div>
-      <div class="pillar reveal" style="--d:.24s"><span class="pillar__num">04</span><h3 class="h3">コバを磨く</h3><p>断面（コバ）を何度も染めては磨き、なめらかで美しい縁に仕上げます。</p></div>
-    </div>
+    <ol class="steps">
+      <li class="step reveal" style="--d:0.00s">
+        <div class="step__img">{% img "atelier-cutting", "裁断する様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">01</span>
+        <h3 class="step__title">Select &amp; Cut</h3>
+        <p class="step__ja">革を選び、裁つ</p>
+        <p class="step__text">キズや色ムラを一枚ずつ確かめ、繊維の向きを読みながら、表革と裏革を正確に切り出します。</p>
+      </li>
+      <li class="step reveal" style="--d:0.08s">
+        <div class="step__img">{% img "atelier-pricking", "菱目打ちで縫い穴をあける様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">02</span>
+        <h3 class="step__title">Pricking</h3>
+        <p class="step__ja">菱目を打つ</p>
+        <p class="step__text">菱目打ちを木槌で一打ずつ。等間隔にそろった縫い穴が、美しいステッチの土台になります。</p>
+      </li>
+      <li class="step reveal" style="--d:0.16s">
+        <div class="step__img">{% img "atelier-stitching", "二本の針で手縫いする様子", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">03</span>
+        <h3 class="step__title">Hand-stitching</h3>
+        <p class="step__ja">一針ずつ縫う</p>
+        <p class="step__text">二本の針で交互に縫い上げるサドルステッチ。ほつれにくく、長く使える仕立てです。</p>
+      </li>
+      <li class="step reveal" style="--d:0.24s">
+        <div class="step__img">{% img "atelier-finish", "コバを仕上げる作業台", "(min-width: 1100px) 25vw, (min-width: 640px) 50vw, 85vw" %}</div>
+        <span class="step__num">04</span>
+        <h3 class="step__title">Edge Finishing</h3>
+        <p class="step__ja">コバを磨く</p>
+        <p class="step__text">断面（コバ）を何度も染めては磨き、なめらかで艶のある縁に仕上げます。</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <section class="section section--paper">
   <div class="container split split--reverse">
-    <div class="split__media split__media--square reveal-img">{% img "swift-colors", "多彩なカラーのMODIGIレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
+    <div class="split__media split__media--square reveal-img">{% img "atelier-lineup", "工房の作業台に並ぶ、手縫いを終えたレザーバンド", "(min-width: 960px) 50vw, 100vw" %}</div>
     <div>
       <p class="eyebrow reveal">Chapter II</p>
       <h2 class="h2 reveal">日本の皆さまへ。</h2>

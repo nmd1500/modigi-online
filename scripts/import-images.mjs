@@ -26,6 +26,14 @@ const manifest = [
   { name: 'epsom-orange',   src: 'epsom/422E451B-EFE4-473A-8CA0-AF094278D75F_1_105_c.jpeg' },
   { name: 'epsom-box',      src: 'epsom/62FF5C61-1A45-4D40-8979-3E255FB2885C_1_105_c.jpeg' },
   { name: 'epsom-etoupe-watch', src: 'epsom/9FE4654F-FB01-4FA0-BEB6-D5D5DF9ADFFE_1_105_c.jpeg' },
+  // Ảnh xưởng thật (atelier)
+  { name: 'atelier-cutting',   src: 'atelier/cutting.jpg' },
+  { name: 'atelier-pricking',  src: 'atelier/pricking.jpg' },
+  { name: 'atelier-stitching', src: 'atelier/stitching.jpg' },
+  { name: 'atelier-crease',    src: 'atelier/edge-crease.jpg' },
+  { name: 'atelier-finish',    src: 'atelier/edge-finish.jpg' },
+  { name: 'atelier-lineup',    src: 'atelier/straps-lineup.jpg' },
+  { name: 'atelier-sorting',   src: 'atelier/sorting.jpg' },
 ];
 
 await fs.mkdir(OUT, { recursive: true });
@@ -47,4 +55,6 @@ for (const item of manifest) {
   meta[item.name] = { widths, ratio: +(m.width / m.height).toFixed(4) };
   console.log('✓', item.name, widths.join('/'));
 }
+const prev = JSON.parse(await fs.readFile('src/_data/images.json', 'utf8').catch(() => '{}'));
+for (const [k, v] of Object.entries(prev)) if (k.startsWith('v/')) meta[k] = v;
 await fs.writeFile('src/_data/images.json', JSON.stringify(meta, null, 2));
