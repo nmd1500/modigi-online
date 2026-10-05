@@ -59,7 +59,7 @@ eleventyComputed:
         {%- for s in line.specs %}<div><dt>{{ s[0] }}</dt><dd>{{ s[1] }}</dd></div>{% endfor %}
         {%- if line.sizes.length %}<div><dt>対応サイズ</dt><dd><div class="chips">{% for s in line.sizes %}<span class="chip">{{ s }}</span>{% endfor %}</div></dd></div>{% endif %}
         {%- if line.colors.length %}<div><dt>カラー</dt><dd><div class="chips">{% for c in line.colors %}<span class="chip"><i style="background:{{ swatches[c] }}"></i>{{ c }}</span>{% endfor %}</div></dd></div>{% endif %}
-        <div><dt>対応モデル</dt><dd>Series 4〜11 / SE / Ultra 1〜3</dd></div>
+        <div><dt>対応モデル</dt><dd>Series 4〜12 / SE（第1〜3世代）/ Ultra 1〜4</dd></div>
       </dl>
 
       <a class="btn btn--gold btn--block" href="#colors">カラーを選ぶ（全{{ line.colorVariants.length }}色）</a>

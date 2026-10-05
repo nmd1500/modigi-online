@@ -738,3 +738,9 @@ body.menu-open .navbar { background: #15110e; }
 .pdp__media figure { background: #fff; }
 .pdp__media img, .row__media img { object-fit: contain; }
 .row__media { background: #fff; }
+
+/* size guide model list */
+.model-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.model-list li { margin-bottom: .5em; }
+.badge-new { display: inline-block; margin-left: 10px; padding: 0 8px; font-family: var(--f-ui); font-size: 11px; font-weight: 600; letter-spacing: .12em; line-height: 20px; color: #1a1410; background: var(--gold-grad); vertical-align: middle; }
+@media (max-width: 640px) { .model-list { grid-template-columns: 1fr; } }
