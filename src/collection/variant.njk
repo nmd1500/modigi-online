@@ -78,6 +78,18 @@ eleventyComputed:
   </div>
 </section>
 
+{%- set vkey = v.line + "/" + v.slug %}
+{%- set rv = [] %}{% for r in reviews %}{% if r.variant == vkey %}{% set rv = (rv.push(r), rv) %}{% endif %}{% endfor %}
+{%- if not rv.length %}{% for r in reviews %}{% if r.line == v.line %}{% set rv = (rv.push(r), rv) %}{% endif %}{% endfor %}{% endif %}
+{%- if rv.length %}
+<section class="section section--tight">
+  <div class="container">
+    <div class="heading-row reveal"><h2 class="title-caps">Customer Voices</h2><a class="link-arrow" href="/#reviews">すべてのレビュー</a></div>
+    {% set list = rv %}{% set showSummary = false %}{% include "partials/reviews.njk" %}
+  </div>
+</section>
+{%- endif %}
+
 <section class="section section--panel section--tight">
   <div class="container">
     <div class="heading-row reveal"><h2 class="title-caps">{{ line.en }} — All Colors</h2><a class="link-arrow" href="/collection/{{ line.slug }}/">{{ line.ja }}について</a></div>

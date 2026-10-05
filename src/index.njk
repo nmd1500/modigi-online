@@ -69,6 +69,16 @@ cards:
   </div>
 </section>
 
+<section class="section section--panel" id="reviews">
+  <div class="container">
+    <div class="heading-row reveal">
+      <h2 class="title-caps">Customer Voices</h2>
+      <span class="muted" style="font-size:15px">お客様の声</span>
+    </div>
+    {% set list = reviews %}{% set showSummary = true %}{% include "partials/reviews.njk" %}
+  </div>
+</section>
+
 <section class="band" data-parallax>
   <div class="band__media" data-parallax-media>{% img "craft-stitch", "", "100vw" %}</div>
   <blockquote class="reveal" style="margin:0">

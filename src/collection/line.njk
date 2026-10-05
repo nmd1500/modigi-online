@@ -81,6 +81,16 @@ eleventyComputed:
   </div>
 </section>
 
+{%- set rv = [] %}{% for r in reviews %}{% if r.line == line.slug %}{% set rv = (rv.push(r), rv) %}{% endif %}{% endfor %}
+{%- if rv.length %}
+<section class="section section--tight">
+  <div class="container">
+    <div class="heading-row reveal"><h2 class="title-caps">Customer Voices</h2><a class="link-arrow" href="/#reviews">すべてのレビュー</a></div>
+    {% set list = rv %}{% set showSummary = false %}{% include "partials/reviews.njk" %}
+  </div>
+</section>
+{%- endif %}
+
 <section class="section section--paper">
   <div class="container split">
     <div>

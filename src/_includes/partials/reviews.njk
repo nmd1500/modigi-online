@@ -1,0 +1,27 @@
+{#- params: list (reviews), heading (bool) -#}
+{%- set total = 0 %}{%- for r in list %}{% set total = total + r.rating %}{% endfor %}
+<div class="reviews">
+  {%- if showSummary %}
+  <div class="reviews__summary reveal">
+    <span class="reviews__score">{{ (total / list.length) | round(1) }}</span>
+    <span class="stars" role="img" aria-label="5点満点中{{ (total / list.length) | round(1) }}点">{% for i in range(5) %}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 6 6.5.7-4.9 4.4 1.4 6.4L12 17l-5.8 3.3 1.4-6.4L2.7 9.5l6.5-.7z"/></svg>{% endfor %}</span>
+    <span class="reviews__count">{{ list.length }}件のレビュー</span>
+  </div>
+  {%- endif %}
+  <div class="reviews__track" tabindex="0" aria-label="お客様のレビュー">
+    {%- for r in list %}
+    {%- set v = (variants | variantBy(r.variant)) if r.variant else null %}
+    {%- set ln = (lines | lineBy(r.line)) if r.line else null %}
+    <figure class="review reveal" style="--d:{{ (loop.index0 % 4) * 0.05 }}s">
+      <span class="stars" role="img" aria-label="5点満点中{{ r.rating }}点">{% for i in range(5) %}<svg viewBox="0 0 24 24" aria-hidden="true"{% if i >= r.rating %} class="is-off"{% endif %}><path d="M12 2.8l2.8 6 6.5.7-4.9 4.4 1.4 6.4L12 17l-5.8 3.3 1.4-6.4L2.7 9.5l6.5-.7z"/></svg>{% endfor %}</span>
+      <blockquote class="review__text">{{ r.text | escape | replace("\n", "<br>") | safe }}</blockquote>
+      <figcaption class="review__meta">
+        <span class="review__name">{{ r.name }} 様</span>
+        {%- if v %}<a class="review__product" href="{{ v.url }}">{{ ln.ja }} ／ {{ v.ja }}</a>
+        {%- elif ln %}<a class="review__product" href="/collection/{{ ln.slug }}/">{{ ln.ja }}</a>{% endif %}
+      </figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+  <p class="reviews__note">※ ご購入者さまからいただいたレビューを原文のまま掲載しています。</p>
+</div>
