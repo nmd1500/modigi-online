@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: ご注文ありがとうございます
+permalink: /order/thanks/
+eleventyExcludeFromCollections: true
+noindex: true
+---
+<section class="section">
+  <div class="container container--narrow" style="text-align:center">
+    <span class="logo-mark logo--gold" aria-hidden="true" style="height:110px;margin:0 auto 40px"></span>
+    <h1 class="h2">ご注文ありがとうございます。</h1>
+    <p class="lead" style="margin:28px auto 0">お支払いが完了しました。ご登録のメールアドレスに、Stripeより領収書をお送りしています。<br>商品はご注文確定後、1〜3営業日以内に発送いたします（送料無料）。</p>
+    <ul class="assurances" style="max-width:420px;margin:40px auto 0;text-align:left">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke-linecap="round" stroke-linejoin="round"/></svg>商品到着後7日以内の返品・サイズ交換</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 10 17l9-10" stroke-linecap="round" stroke-linejoin="round"/></svg>12ヶ月の品質保証</li>
+    </ul>
+    <p style="margin-top:32px" class="muted">ご不明な点は <a href="/contact/" style="color:var(--gold-light)">お問い合わせ</a>（{{ site.email }}）までご連絡ください。</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn--gold" href="/">ホームへ戻る</a><a class="btn btn--outline-light" href="/collection/">コレクションを見る</a></div>
+  </div>
+</section>

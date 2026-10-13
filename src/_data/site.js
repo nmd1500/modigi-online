@@ -8,6 +8,14 @@ export default {
   founded: 2015,
   email: 'modigijp@gmail.com',
   amazon: 'https://www.amazon.co.jp/stores/page/1828EBFA-E8CB-4AB3-B907-C6625C57D7A2',
+  // Stripe Payment Links theo dòng sản phẩm (để trống = chưa bán trực tiếp, nút sẽ ẩn)
+  checkout: {
+    crocodile: '',
+    swift: '',
+    epsom: '',
+    essential: '',
+  },
+  policy: { shipping: '送料無料', returns: '商品到着後7日以内', warranty: '12ヶ月保証' },
   sns: [
     { id: 'instagram', name: 'Instagram', handle: '@modigi_jp', url: 'https://www.instagram.com/modigi_jp/', ja: '新作カラーや着用イメージを毎日お届け。' },
     { id: 'tiktok', name: 'TikTok', handle: '@modigi_jp', url: 'https://www.tiktok.com/@modigi_jp', ja: '職人の手仕事や付け替えの様子をショート動画で。' },

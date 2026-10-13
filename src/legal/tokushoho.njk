@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: 特定商取引法に基づく表記
+description: MODIGI（modigi.online）の特定商取引法に基づく表記。販売業者、所在地、販売価格、送料、支払方法、引渡し時期、返品・交換、保証について。
+permalink: /legal/tokushoho/
+---
+{%- set rows = [
+  ['販売業者', 'NGUYEN MANH DIEN（屋号：MODIGI）'],
+  ['運営統括責任者', 'NGUYEN MANH DIEN'],
+  ['所在地', '〒455-0021<br>愛知県名古屋市港区8-11-708'],
+  ['電話番号', '070-4807-0342<br><span class="muted">※お問い合わせは、できるだけメールまたは<a href="/contact/">お問い合わせフォーム</a>にてお願いいたします。</span>'],
+  ['メールアドレス', '<a href="mailto:' + site.email + '">' + site.email + '</a>'],
+  ['ホームページ', '<a href="' + site.url + '">' + site.url + '</a>'],
+  ['販売価格', '各商品ページに記載の金額（消費税込み）'],
+  ['商品代金以外の必要料金', '送料：無料（日本国内）<br>決済手数料：無料'],
+  ['お支払い方法', 'クレジットカード（Visa / Mastercard / JCB / American Express ほか）、Apple Pay、Google Pay<br><span class="muted">※決済はStripe社のシステムを利用しています。カード情報は当サイトには保存されません。</span>'],
+  ['お支払い時期', 'ご注文確定時にお支払いが完了します。'],
+  ['商品の引渡し時期', 'ご注文確定後、1〜3営業日以内に発送いたします。<br>※お届け日数は地域により異なります。'],
+  ['返品・交換について', '商品到着後7日以内にご連絡ください。未使用・未装着の商品に限り、返品・サイズ交換を承ります。<br>不良品・誤配送の場合の送料は当社が負担いたします。お客様都合による返品・交換の場合、返送料はお客様のご負担となります。'],
+  ['保証について', 'お届けから12ヶ月間、通常のご使用において生じた製品の不具合（縫製のほつれ、金具の破損など）について、無償で修理または交換いたします。<br>※経年変化による色味・風合いの変化、お客様の過失による破損は対象外となります。'],
+  ['販売数量', '在庫がなくなり次第、販売終了となる場合がございます。']
+] %}
+<section class="page-hero">
+  <div class="container container--narrow">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>特定商取引法に基づく表記</li></ol>
+    <h1 class="display" style="font-size:clamp(28px,4vw,44px)">特定商取引法に基づく表記</h1>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container container--narrow">
+    <div class="table-wrap">
+      <table class="size-table legal-table">
+        <tbody>
+          {%- for r in rows %}
+          <tr><th scope="row">{{ r[0] }}</th><td>{{ r[1] | safe }}</td></tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -803,3 +803,10 @@ body.menu-open .navbar { background: #15110e; }
 .sns-card:hover .sns-card__cta svg { transform: translate(3px, -3px); }
 @media (max-width: 960px) { .sns__grid { grid-template-columns: 1fr; } }
 .site-footer__social { gap: 12px; }
+
+/* legal table */
+.legal-table { min-width: 0; }
+.legal-table th { width: 30%; vertical-align: top; font-family: var(--f-body); color: var(--gold-light); font-weight: 500; }
+.legal-table td { line-height: 1.9; }
+.legal-table a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) { .legal-table th, .legal-table td { display: block; width: auto; } .legal-table th { padding-bottom: 0; border-bottom: 0; } }
