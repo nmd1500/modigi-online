@@ -40,7 +40,30 @@ source:
 ---
 ```
 
-- Không tải ảnh từ bài gốc (bản quyền). Chỉ dùng ảnh có sẵn của MODIGI.
+- Không tải ảnh từ bài gốc (bản quyền). Chỉ dùng ảnh có sẵn của MODIGI — **trừ khi nguồn là Apple Newsroom** (xem dưới).
+
+### Ảnh khi nguồn là Apple Newsroom
+
+Chỉ áp dụng khi URL nguồn là `apple.com/newsroom/` hoặc `apple.com/jp/newsroom/` (bài báo khác dẫn lại tin Apple thì KHÔNG tính).
+
+1. Tìm ảnh chính của bài. Cách nhanh nhất (ảnh ngang 1200px, đủ dùng):
+   ```bash
+   curl -sL -A "Mozilla/5.0" "<url bài Newsroom>" | grep -oE 'property="og:image" content="[^"]+"'
+   ```
+   Nếu trong bài có ảnh Apple Watch rõ hơn (link "Download" / `..._big.jpg.large_2x.jpg`) thì ưu tiên ảnh đó.
+2. Chạy:
+   ```bash
+   npm run news-image -- "<url ảnh>" <slug>
+   ```
+   Script chỉ nhận ảnh từ apple.com; tạo key `news/<slug>`.
+3. Front matter thêm:
+   ```yaml
+   image: news/<slug>
+   imageCredit: 画像：Apple
+   ```
+4. Nhớ `git add src/assets/img/news/ src/_data/images.json` khi commit.
+
+Nếu không tìm được ảnh phù hợp hoặc script báo lỗi → dùng ảnh MODIGI như thường, bỏ `imageCredit`.
 - Slug file: tiếng Anh, ngắn, có từ khoá, vd `watchos-27-release.md`, `series-12-announced.md`.
 
 ## 3. Build & kiểm tra
@@ -58,7 +81,7 @@ Phải không lỗi và có `_site/news/<slug>/index.html`. Nếu lỗi `Không 
 Khi đồng ý:
 
 ```bash
-git add src/news/<slug>.md
+git add src/news/<slug>.md          # + src/assets/img/news/ src/_data/images.json nếu có ảnh Apple
 git commit -m "news: <title>"
 git push
 ```

@@ -32,6 +32,7 @@ layout: layouts/base.njk
   </header>
   <div class="container">
     <div class="article-hero">{% img image, title, "(min-width: 1320px) 1272px, 100vw", "eager" %}</div>
+    {%- if imageCredit %}<p class="news-credit">{{ imageCredit }}</p>{% endif %}
   </div>
   <div class="container container--narrow">
     <div class="prose" style="margin-inline:auto;padding-bottom:var(--section)">

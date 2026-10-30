@@ -7,6 +7,7 @@
     "build": "eleventy",
     "sync": "node scripts/sync-products.mjs",
     "images": "node scripts/import-images.mjs",
+    "news-image": "node scripts/news-image.mjs",
     "variants": "node scripts/build-variants.mjs"
   },
   "type": "module",

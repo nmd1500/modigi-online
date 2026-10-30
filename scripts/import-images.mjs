@@ -56,5 +56,5 @@ for (const item of manifest) {
   console.log('✓', item.name, widths.join('/'));
 }
 const prev = JSON.parse(await fs.readFile('src/_data/images.json', 'utf8').catch(() => '{}'));
-for (const [k, v] of Object.entries(prev)) if (k.startsWith('v/')) meta[k] = v;
+for (const [k, v] of Object.entries(prev)) if (k.startsWith('v/') || k.startsWith('news/')) meta[k] = v;
 await fs.writeFile('src/_data/images.json', JSON.stringify(meta, null, 2));
