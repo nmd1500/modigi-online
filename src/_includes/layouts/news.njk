@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+---
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": title,
+  "description": description,
+  "datePublished": page.date | isoDate,
+  "image": site.url + "/assets/img/" + image + "-1200.webp",
+  "author": { "@type": "Organization", "name": "MODIGI" },
+  "publisher": { "@type": "Organization", "name": "MODIGI" },
+  "isBasedOn": source.url
+} | json | safe }}</script>
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": site.url + "/" },
+    { "@type": "ListItem", "position": 2, "name": "Apple Watch ニュース", "item": site.url + "/news/" },
+    { "@type": "ListItem", "position": 3, "name": title }
+  ]
+} | json | safe }}</script>
+<article>
+  <header class="page-hero">
+    <div class="container container--narrow">
+      <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li><a href="/news/">Apple Watch ニュース</a></li><li>{{ category }}</li></ol>
+      <p class="eyebrow"><time datetime="{{ page.date | isoDate }}">{{ page.date | jaDate }}</time></p>
+      <h1 class="display" style="font-size:clamp(28px,3.8vw,46px)">{{ title }}</h1>
+      <p class="lead">{{ description }}</p>
+    </div>
+  </header>
+  <div class="container">
+    <div class="article-hero">{% img image, title, "(min-width: 1320px) 1272px, 100vw", "eager" %}</div>
+  </div>
+  <div class="container container--narrow">
+    <div class="prose" style="margin-inline:auto;padding-bottom:var(--section)">
+      {{ content | safe }}
+      {%- if source %}
+      <p class="news-source">出典：<a href="{{ source.url }}" target="_blank" rel="noopener nofollow">{{ source.name }}{% if source.title %}「{{ source.title }}」{% endif %}</a></p>
+      {%- endif %}
+      <div class="inline-cta">
+        <p>MODIGIの本革バンドを見る</p>
+        <a class="btn" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="news-{{ page.fileSlug }}">Amazonで購入する</a>
+      </div>
+    </div>
+  </div>
+</article>
+{% include "partials/cta.njk" %}

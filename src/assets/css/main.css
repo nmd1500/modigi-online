@@ -810,3 +810,6 @@ body.menu-open .navbar { background: #15110e; }
 .legal-table td { line-height: 1.9; }
 .legal-table a { color: var(--gold-light); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) { .legal-table th, .legal-table td { display: block; width: auto; } .legal-table th { padding-bottom: 0; border-bottom: 0; } }
+
+/* News: source attribution */
+.news-source { margin-top: 2.5em; padding-top: 1.2em; border-top: 1px solid var(--line); font-size: var(--fs-small); color: var(--ink-3); }

@@ -40,6 +40,10 @@ export default function (eleventyConfig) {
     api.getFilteredByGlob('src/journal/*.md').sort((a, b) => b.date - a.date),
   );
 
+  eleventyConfig.addCollection('news', (api) =>
+    api.getFilteredByGlob('src/news/*.md').sort((a, b) => b.date - a.date),
+  );
+
   return {
     dir: { input: 'src', includes: '_includes', data: '_data', output: '_site' },
     markdownTemplateEngine: 'njk',

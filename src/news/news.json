@@ -1,0 +1,1 @@
+{ "layout": "layouts/news.njk", "ogType": "article", "permalink": "/news/{{ page.fileSlug }}/" }

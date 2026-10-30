@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Apple Watch ニュース
+description: Apple Watchの新モデル、watchOSアップデート、新機能、バンド情報など、最新ニュースをわかりやすくまとめてお届けします。
+permalink: /news/
+---
+<section class="page-hero">
+  <div class="container">
+    <ol class="breadcrumb"><li><a href="/">ホーム</a></li><li>Apple Watch ニュース</li></ol>
+    <p class="eyebrow">News</p>
+    <h1 class="display">Apple Watch<br>最新ニュース。</h1>
+  </div>
+</section>
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="posts">
+      {%- for post in collections.news %}{% include "partials/post-card.njk" %}{% else %}<p>ニュースは近日公開予定です。</p>{% endfor %}
+    </div>
+  </div>
+</section>
