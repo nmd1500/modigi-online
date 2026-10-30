@@ -1484,5 +1484,13 @@
       1800
     ],
     "ratio": 1.7786
+  },
+  "news/watchos-27-2-siri-japanese": {
+    "widths": [
+      640,
+      1200,
+      1800
+    ],
+    "ratio": 1.7786
   }
 }
