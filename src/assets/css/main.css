@@ -60,7 +60,7 @@ a { color: inherit; text-decoration: none; }
 h1, h2, h3, h4 { margin: 0; font-weight: 500; color: var(--ink); }
 p { margin: 0 0 1.4em; }
 p:last-child { margin-bottom: 0; }
-ul { margin: 0; padding: 0; list-style: none; }
+ul, .breadcrumb { margin: 0; padding: 0; list-style: none; }
 ::selection { background: var(--gold); color: var(--night); }
 
 :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
@@ -815,3 +815,53 @@ body.menu-open .navbar { background: #15110e; }
 .article-hero + .news-credit { margin-top: calc(10px - clamp(48px, 7vw, 96px)); margin-bottom: clamp(48px, 7vw, 96px); }
 .news-credit { text-align: right; font-size: 12px; color: var(--ink-3); }
 .news-source { margin-top: 2.5em; padding-top: 1.2em; border-top: 1px solid var(--line); font-size: var(--fs-small); color: var(--ink-3); }
+
+/* =====================================================================
+   CREAM CONTENT — nội dung nền kem, menu/footer/ảnh hero giữ tông tối
+   ===================================================================== */
+:root {
+  --ivory: #f5efe4;
+  --paper: #fbf8f2;
+  --sand: #ece3d4;
+  --line: rgba(122, 90, 40, .2);
+  --ink: #2b211a;
+  --ink-2: #4a3e34;
+  --ink-3: #6b5c4e;
+  --cognac: #8f6a2c;
+  --gold: #8a6528;
+  --gold-light: #7d5a22;
+  --gold-grad: linear-gradient(135deg, #a8823c 0%, #7d5a22 50%, #a07a35 100%);
+}
+.masthead, .navbar, .drawer, .site-footer, .hero__frame, .band, .section--night {
+  --ivory: #1a1613; --paper: #221d19; --sand: #2a231d;
+  --line: rgba(201, 163, 93, .22);
+  --ink: #f1e7d6; --ink-2: #ddd1bf; --ink-3: #ab9d89;
+  --cognac: #d4ad68; --gold: #c9a35d; --gold-light: #e2c487;
+  --gold-grad: linear-gradient(135deg, #f6e2a8 0%, #d6b06a 38%, #a87a35 70%, #e7c983 100%);
+  color: var(--ink-2);
+}
+body { background: var(--ivory); background-image: none; color: var(--ink-2); }
+.masthead { background: #15110e; }
+.navbar { box-shadow: 0 10px 24px -18px rgba(43, 33, 26, .5); }
+.section--paper { background: var(--paper); }
+.section--sand { background: var(--sand); }
+.section--panel { background: var(--paper); }
+.section--night, .cta-band { background: #15110e; }
+
+/* gold buttons keep the bright gradient; plain buttons go dark brown on cream */
+.btn--gold { --bg: #c9a35d; --bd: #c9a35d; background-image: linear-gradient(135deg, #f6e2a8 0%, #d6b06a 38%, #a87a35 70%, #e7c983 100%); }
+.btn:not(.btn--gold):not(.btn--ghost):not(.btn--outline-light) { --bg: var(--ink); --fg: var(--paper); --bd: var(--ink); --hover: var(--gold-light); }
+.btn:not(.btn--gold):hover { color: var(--paper); }
+.prose a.btn { color: var(--fg); }
+.prose a.btn:hover { color: var(--paper); }
+.btn--ghost:hover, .btn--outline-light:hover { color: var(--paper); }
+
+/* panels that were translucent dark */
+.card, .feature, .material, .inline-cta, .table-wrap, .review, .sns-card { background: var(--paper); }
+.material:hover { background: #fff; }
+.card:hover, .sns-card:hover { box-shadow: 0 24px 40px -28px rgba(43, 33, 26, .45); }
+.post-card__media, .article-hero, .row__media, .step__img { background: var(--sand); }
+.field input, .field select, .field textarea { background: #fff; color: var(--ink); }
+.field input:focus, .field select:focus, .field textarea:focus { background: #fff; }
+.alert { background: #fbeae6; color: #7a2a1d; border-color: #e0a99c; }
+.masthead__logo .logo-mark { filter: none; }
