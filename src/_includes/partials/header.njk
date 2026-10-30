@@ -15,6 +15,7 @@
       <a href="/collection/{{ l.slug }}/"{% if page.url == '/collection/' + l.slug + '/' %} aria-current="page"{% endif %}>{{ l.en }}</a>
       {%- endfor %}
       <a href="/story/"{% if page.url.startsWith('/story/') %} aria-current="page"{% endif %}>About Us</a>
+      <a href="/news/"{% if page.url.startsWith('/news/') %} aria-current="page"{% endif %}>News</a>
       <a href="/contact/"{% if page.url.startsWith('/contact/') %} aria-current="page"{% endif %}>Contact</a>
     </nav>
     <a class="btn btn--gold btn--small navbar__cta" href="{{ site.amazon }}" target="_blank" rel="noopener" data-amazon="header">Amazonで購入</a>
